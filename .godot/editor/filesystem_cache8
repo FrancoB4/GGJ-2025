@@ -1,17 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737778199
-icon.svg::CompressedTexture2D::1940732145216412694::1737772310::1737772316::1::::<><>::
-Prueba.tscn::PackedScene::5736154864886272481::1737777817::0::1::::<><>::uid://fduqje5puket::::res://Player/Player.tscn
-::res://Escenarios/::1737777617
-::res://Escenarios/Nivel 1/::1737777617
-nivel_1.tscn::PackedScene::2148388969205239772::1737777617::0::1::::<><>::res://General/GameManager.cs<>uid://fduqje5puket::::res://Player/Player.tscn
-::res://General/::1737777617
-GameManager.cs::CSharpScript::-1::1737777617::0::1::::<><>::
-::res://Player/::1737777817
-Movement.cs::CSharpScript::-1::1737777817::0::1::::<>CharacterBody3D<>::
-Player.tscn::PackedScene::358380744283423379::1737777351::0::1::::<><>::res://Player/Movement.cs
-::res://Props/::1737777623
-Base.obj::Mesh::3438893830625789380::1737777617::1737777622::1::::<><>::
-Bricks2.obj::Mesh::5246041276317622876::1737777617::1737777623::1::::<><>::
-Bricks.obj::Mesh::2082019889706443422::1737777617::1737777623::1::::<><>::
-Column.obj::Mesh::8404178358365507034::1737777617::1737777623::1::::<><>::
+::res://::1737777899
+icon.svg::CompressedTexture2D::1940732145216412694::1737773768::1737777900::1::::<><>::
+Prueba.tscn::PackedScene::5736154864886272481::1737777899::0::1::::<><>::uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
+::res://_Scripts/::1737777899
+::res://_Scripts/General/::1737774342
+GameManager.cs::CSharpScript::-1::1737777115::0::1::::<><>::
+::res://_Scripts/Player/::1737777899
+Movement.cs::CSharpScript::-1::1737777864::0::1::::<><>::
+Player.tscn::PackedScene::358380744283423379::1737777899::0::1::::<><>::res://_Scripts/Player/Movement.cs
+::res://Escenarios/::1737775094
+::res://Escenarios/Nivel 1/::1737777899
+nivel_1.tscn::PackedScene::2148388969205239772::1737777899::0::1::::<><>::res://_Scripts/General/GameManager.cs<>uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
+::res://Props/::1737775739
+Base.obj::Mesh::3438893830625789380::1737775533::1737777900::1::::<><>::
+Bricks2.obj::Mesh::5246041276317622876::1737775568::1737777900::1::::<><>::
+Bricks.obj::Mesh::2082019889706443422::1737775556::1737777900::1::::<><>::
+Column.obj::Mesh::8404178358365507034::1737775586::1737777900::1::::<><>::
