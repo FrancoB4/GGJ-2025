@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5uxwghqceg3m"]
 
-[ext_resource type="Script" path="res://General/GameManager.cs" id="1_p6p35"]
-[ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Player/Player.tscn" id="2_p5fkc"]
+[ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
+[ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://_Scripts/Player/Player.tscn" id="2_p5fkc"]
 
 [sub_resource type="CSharpScript" id="CSharpScript_y6cbr"]
 script/source = "using Godot;
