@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgt1gqengll24"]
+[gd_scene load_steps=3 format=3 uid="uid://dgt1gqengll24"]
 
 [ext_resource type="Script" path="res://_Scripts/General/OptionsMenu.cs" id="1_mf1vi"]
+[ext_resource type="PackedScene" uid="uid://gqtcqt8io2oe" path="res://Escenas/Options_tab_container.tscn" id="2_4jdet"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -34,12 +35,16 @@ text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="OptionsTabContainer" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_4jdet")]
+layout_mode = 2
+size_flags_vertical = 3
+
 [node name="Close_button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(240, 60)
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 10
-text = "Exit"
+size_flags_vertical = 8
+text = "Back to Main Menu"
 icon_alignment = 1
 vertical_icon_alignment = 2
 
