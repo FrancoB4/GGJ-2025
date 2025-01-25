@@ -32,7 +32,7 @@ script = ExtResource("2_je25h")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.347435, 0)
-omni_range = 1.11372
+omni_range = 0.493339
 
 [node name="Area3D" type="Area3D" parent="."]
 

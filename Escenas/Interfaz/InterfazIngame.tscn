@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqq3r2fnhyfi8"]
+[gd_scene load_steps=8 format=3 uid="uid://cqq3r2fnhyfi8"]
 
-[ext_resource type="Script" path="res://_Scripts/InterfazIngame.cs" id="1_ovhbo"]
-[ext_resource type="Script" path="res://Escenas/Interfaz/ProgressBar.cs" id="2_pkglv"]
+[ext_resource type="Script" path="res://_Scripts/Interfaz/InterfazIngame.cs" id="1_ovhbo"]
+[ext_resource type="Shader" path="res://Escenas/Interfaz/InterfazIngame.gdshader" id="2_6wu46"]
+[ext_resource type="Script" path="res://_Scripts/Interfaz/ProgressBar.cs" id="2_pkglv"]
+[ext_resource type="Script" path="res://_Scripts/Interfaz/FiltroPocoOxigeno.cs" id="3_pg8gu"]
+[ext_resource type="Theme" uid="uid://5u0gwedd3kot" path="res://Theme/TemaInterfaz.tres" id="5_05dv2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bisuu"]
+shader = ExtResource("2_6wu46")
+shader_parameter/center_color = Color(0, 0, 0, 0)
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/radius = 0.596
+shader_parameter/softness = 0.3
+shader_parameter/effect_strength = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_jn8t3"]
+font_size = 60
 
 [node name="InterfazIngame" type="Control"]
 layout_mode = 3
@@ -12,6 +26,16 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ovhbo")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_bisuu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_pg8gu")
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
 offset_left = 15.0
@@ -21,3 +45,41 @@ offset_bottom = 58.0
 step = 0.001
 show_percentage = false
 script = ExtResource("2_pkglv")
+
+[node name="TextoGameOver" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -41.5
+offset_right = 163.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_jn8t3")
+
+[node name="BotonReintentar" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = 56.0
+offset_right = 45.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_05dv2")
+text = "Reintentar"
+
+[connection signal="ActivarFiltro" from="." to="ColorRect" method="Activar"]
+[connection signal="ActivarFiltroGameOverSignal" from="." to="ColorRect" method="FiltroGameOver"]
+[connection signal="DesactivarFiltro" from="." to="ColorRect" method="Desactivar"]

@@ -8,10 +8,6 @@
 
 config_version=5
 
-[GameJam]
-
-2025/config/ninetailsrabbit.terrainy/update_notification_enabled=true
-
 [application]
 
 config/name="GameJam/2025"
