@@ -1,25 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=3 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
-[ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://_Scripts/Player/Player.tscn" id="2_p5fkc"]
-
-[sub_resource type="CSharpScript" id="CSharpScript_y6cbr"]
-script/source = "using Godot;
-using System;
-
-public partial class Estadisticas : Node
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
+[ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Player.tscn" id="2_p5fkc"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_p6p35")
@@ -27,6 +9,5 @@ script = ExtResource("1_p6p35")
 [node name="OxigenTimer" type="Timer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_p5fkc")]
-script = SubResource("CSharpScript_y6cbr")
 
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]

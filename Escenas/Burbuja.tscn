@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://djkyeyyp00fpe"]
+
+[ext_resource type="ArrayMesh" uid="uid://cg0hsetmqubo3" path="res://Props/Bricks2.obj" id="1_ye27y"]
+[ext_resource type="Script" path="res://_Scripts/Burbuja.cs" id="2_je25h"]
+
+[node name="Burbuja" type="Node3D"]
+script = ExtResource("2_je25h")
+speed = null
+
+[node name="Bricks2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ye27y")
