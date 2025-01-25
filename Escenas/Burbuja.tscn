@@ -24,15 +24,15 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_wl6f1"]
 material = SubResource("StandardMaterial3D_6ed6y")
-radius = 0.02
-height = 0.04
+radius = 0.04
+height = 0.08
 
 [node name="Burbuja" type="Node3D"]
 script = ExtResource("2_je25h")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.347435, 0)
-omni_range = 0.56
+omni_range = 1.11372
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -41,10 +41,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.10368, 0)
 shape = SubResource("CapsuleShape3D_hjtwh")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+layers = 2
 amount = 30
 amount_ratio = 0.4
 lifetime = 2.4
 preprocess = 0.46
+collision_base_size = 0.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_7lrwc")
 draw_pass_1 = SubResource("SphereMesh_wl6f1")

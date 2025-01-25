@@ -6,6 +6,7 @@ using System.Timers;
 public partial class GameManager : Node
 {
 	public static GameManager Instancia { get; private set; }
+    private InterfazIngame interfazIngame;
 	private int oxigeno;
 	private bool pocoOxigeno = false;
 
@@ -18,6 +19,8 @@ public partial class GameManager : Node
 		oxigeno = 60;        
 		Godot.Timer timer = GetChild<Godot.Timer>(0);
 		timer.Start();
+
+        interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,10 +37,17 @@ public partial class GameManager : Node
 	}
 
 	public void AgregarOxigeno(int cant) {
-		oxigeno += cant;
+        if (oxigeno + cant <= 100) {
+            oxigeno += cant;
+        }
+        else {
+            oxigeno = 100;
+        }
 		if (oxigeno >= 15) {
 			PocoOxigenoFilterOff();
+            pocoOxigeno = false;
 		}
+        interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
 
@@ -50,6 +60,7 @@ public partial class GameManager : Node
 		else if (oxigeno <= 0) {
 			GameOver();
 		}
+        interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
 

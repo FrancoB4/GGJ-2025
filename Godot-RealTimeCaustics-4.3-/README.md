@@ -1,0 +1,26 @@
+# Godot - (RealTime-ish) Caustics
+[![LICENSE](https://img.shields.io/badge/LICENSE-MIT-blue?style=for-the-badge&logo=godotengine)](https://github.com/paddy-exe/Godot-RealTimeCaustics/blob/4.3+/LICENSE.md)
+
+This is a demo showcasing a way to add cool Caustics effects to your Godot project. This branch will be only supported for 4.3+ Godot.
+It may work in 4.2 but is not supported.
+
+## Disclaimer
+The **original** shader code was written by Alex Ameye ([@alexanderameye](https://twitter.com/alexanderameye)). The original article can be found here:  [Rendering realtime caustics](https://alexanderameye.github.io/notes/realtime-caustics/). I merely take credit for the porting of his shader to GLSL and Godot.
+
+## Features
+* [X] Bounding Box Mask (caustics only visible inside the box)
+* [X] Caustics Mapping over World UV
+    * [X] changes with light direction
+* [X] Scaling and movement/panning
+* [X] Multiple overlaped caustics textures
+* [X] Chromatic aberration
+* [X] Luminance fade
+* [X] Edge fade
+* [X] "Underwater camera" -> caustics are being shown when camera is inside the caustics volume
+
+## Showcase
+![image](Assets/Showcase/Showcase-Picture.jpeg)
+
+![video](Assets/Showcase/Showcase-GIF.gif)
+
+
