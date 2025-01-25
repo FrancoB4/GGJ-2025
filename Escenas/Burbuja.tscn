@@ -1,11 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://djkyeyyp00fpe"]
+[gd_scene load_steps=5 format=3 uid="uid://djkyeyyp00fpe"]
 
-[ext_resource type="ArrayMesh" uid="uid://cg0hsetmqubo3" path="res://Props/Bricks2.obj" id="1_ye27y"]
-[ext_resource type="Script" path="res://_Scripts/Burbuja.cs" id="2_je25h"]
+[ext_resource type="ArrayMesh" uid="uid://dr0bubxoup1q1" path="res://Props/Column.obj" id="2_hkort"]
+[ext_resource type="Script" path="res://_Scripts/Burbuja/Burbuja.cs" id="2_je25h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjtwh"]
+height = 5.23188
+
+[sub_resource type="CSharpScript" id="CSharpScript_lwfg4"]
+script/source = "using Godot;
+using System;
+
+public partial class Colisiones : Node3D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+}
+"
 
 [node name="Burbuja" type="Node3D"]
 script = ExtResource("2_je25h")
-speed = null
 
-[node name="Bricks2" type="MeshInstance3D" parent="."]
-mesh = ExtResource("1_ye27y")
+[node name="Column" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_hkort")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37225, 0)
+shape = SubResource("CapsuleShape3D_hjtwh")
+script = SubResource("CSharpScript_lwfg4")
+
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

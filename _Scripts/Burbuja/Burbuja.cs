@@ -16,4 +16,12 @@ public partial class Burbuja : Node3D
 	{
         Position += new Vector3(0, speed * (float)delta, 0);
 	}
+
+    private void OnBodyEntered(Node body) {
+        if (body.Name == "Player") {
+            GameManager.Instancia.AgregarOxigeno(15);
+        }
+        GD.Print("Hola");
+        QueueFree();
+    }
 }

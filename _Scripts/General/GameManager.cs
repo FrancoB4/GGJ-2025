@@ -5,8 +5,8 @@ using System.Timers;
 
 public partial class GameManager : Node
 {
-    private static GameManager gameManager;
-    private int oxigeno = 60;
+    public static GameManager Instancia { get; private set; }
+    private int oxigeno;
     private bool pocoOxigeno = false;
 
     private GameManager() { }
@@ -14,21 +14,16 @@ public partial class GameManager : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+        Instancia = this;
+        oxigeno = 60;        
+        Godot.Timer timer = GetChild<Godot.Timer>(0);
+        timer.Start();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
-
-    public static GameManager Instancia {
-        get {
-            if (gameManager == null) {
-                gameManager = new GameManager();
-            }
-            return gameManager;
-        }
-    }
 
     public void GameOver() {
 
@@ -43,6 +38,7 @@ public partial class GameManager : Node
         if (oxigeno >= 15) {
             PocoOxigenoFilterOff();
         }
+        GD.Print(oxigeno);
     }
 
     public void QuitarOxigeno(int cant) {
@@ -54,6 +50,7 @@ public partial class GameManager : Node
         else if (oxigeno <= 0) {
             GameOver();
         }
+        GD.Print(oxigeno);
     }
 
     private void PocoOxigenoFilterOn() {

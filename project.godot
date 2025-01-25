@@ -15,6 +15,10 @@ run/main_scene="res://Prueba.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="res://_Scripts/General/GameManager.cs"
+
 [dotnet]
 
 project/assembly_name="GameJam-2025"
