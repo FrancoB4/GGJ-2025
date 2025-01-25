@@ -1,14 +1,15 @@
 using Godot;
 using System;
-using System.Runtime.CompilerServices;
-using System.Timers;
 
 public partial class GameManager : Node
 {
+    [Signal]
+    public delegate void GameOverSignalEventHandler();
 	public static GameManager Instancia { get; private set; }
     private InterfazIngame interfazIngame;
 	private int oxigeno;
 	private bool pocoOxigeno = false;
+    private ColorRect filtroPocoOxigeno;
 
 	private GameManager() { }
 
@@ -16,8 +17,8 @@ public partial class GameManager : Node
 	public override void _Ready()
 	{
 		Instancia = this;
-		oxigeno = 60;        
-		Godot.Timer timer = GetChild<Godot.Timer>(0);
+		oxigeno = 18;        
+		Timer timer = GetNode<Timer>("OxigenTimer");
 		timer.Start();
 
         interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
@@ -29,7 +30,7 @@ public partial class GameManager : Node
 	}
 
 	public void GameOver() {
-
+        EmitSignal(SignalName.GameOverSignal);
 	}
 
 	public void OnOxigenTimerTimeout() {
@@ -44,30 +45,22 @@ public partial class GameManager : Node
             oxigeno = 100;
         }
 		if (oxigeno >= 15) {
-			PocoOxigenoFilterOff();
             pocoOxigeno = false;
-		}
-        
-	}
-
-	public void QuitarOxigeno(int cant) {
-		oxigeno -= cant;
-		if (oxigeno < 15 && !pocoOxigeno) {
-			PocoOxigenoFilterOn();
-			pocoOxigeno = true;
-		}
-		else if (oxigeno <= 0) {
-			GameOver();
 		}
         interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
 
-	private void PocoOxigenoFilterOn() {
-		
-	}
-
-	private void PocoOxigenoFilterOff() {
-		
+	public void QuitarOxigeno(int cant) {
+		oxigeno -= cant;
+		if (oxigeno < 15 && !pocoOxigeno) {
+			pocoOxigeno = true;
+		}
+		else if (oxigeno <= 0) {
+            GetNode<Timer>("OxigenTimer").QueueFree();
+			GameOver();
+		}
+        interfazIngame.ActualizarValor(oxigeno);
+		GD.Print(oxigeno);
 	}
 }
