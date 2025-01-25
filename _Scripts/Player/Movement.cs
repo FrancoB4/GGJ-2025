@@ -24,12 +24,12 @@ public partial class Movement : CharacterBody3D
 		// Obtener la velocidad actual del personaje
 		Vector3 velocity = Velocity;
 		
-		if (Input.IsActionPressed("ui_accept"))
+		if (Input.IsActionPressed("move_up"))
 		{
 			// Subir cuando se presiona espacio
 			velocity.Y = JumpVelocity;
 		}
-		else if (Input.IsActionPressed("ui_down2"))
+		else if (Input.IsActionPressed("move_down"))
 		{
 			// Bajar cuando se presiona shift
 			velocity.Y = DescendVelocity;
@@ -45,7 +45,7 @@ public partial class Movement : CharacterBody3D
 		}
 		
 		// Movimiento en el plano horizontal
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_approach", "move_away");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
 
 		// Actualizar la velocidad en los ejes X y Z

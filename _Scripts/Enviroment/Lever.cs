@@ -41,7 +41,7 @@ public partial class Lever : Node3D
 	public override void _Process(double delta)
 	{
 		// Verifica si el jugador está cerca y presionó la tecla de interacción
-		if (isPlayerNearby && Input.IsActionJustPressed("ui_interactive"))
+		if (isPlayerNearby && Input.IsActionJustPressed("interactive"))
 		{
 			ToggleLever();
 		}
