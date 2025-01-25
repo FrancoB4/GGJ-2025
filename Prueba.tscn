@@ -2,24 +2,23 @@
 
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Player/Player.tscn" id="1_git84"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_av225"]
-size = Vector3(3.70758, 0.452515, 1)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_mgvvd"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_av225"]
+size = Vector3(20.0521, 0.452515, 19.9382)
 
 [node name="Prueba" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_mgvvd")
+skeleton = NodePath("StaticBody3D")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.293121, -0.227087, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0208511, -0.227087, 0.0115967)
 shape = SubResource("BoxShape3D_av225")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("PlaneMesh_mgvvd")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.989531, 0.144322, 0, -0.144322, 0.989531, 0, 1.07739, 3.22652)
-
 [node name="Player" parent="." instance=ExtResource("1_git84")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31165, 0)
