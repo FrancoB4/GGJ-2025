@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjux4mn5uwqdn"]
 
-[ext_resource type="Script" path="res://_Scripts/General/HotkeyRebindButton.cs" id="1_skh2b"]
+[ext_resource type="Script" path="res://_Scripts/General/hotkey_rebind_button.gd" id="1_lepmv"]
 
 [node name="HotkeyRebindButton" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_skh2b")
+script = ExtResource("1_lepmv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -34,7 +34,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 200
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="Button" type="Button" parent="HBoxContainer" groups=["hotkey_button2"]]
+custom_minimum_size = Vector2(164, 0)
 layout_mode = 2
 toggle_mode = true
 text = "Action_Key"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]
