@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnyvvrihk8rl6"]
+[gd_scene load_steps=4 format=3 uid="uid://cnyvvrihk8rl6"]
+
+[ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Player/Player.tscn" id="1_git84"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_av225"]
 size = Vector3(3.70758, 0.452515, 1)
@@ -15,3 +17,9 @@ shape = SubResource("BoxShape3D_av225")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_mgvvd")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.989531, 0.144322, 0, -0.144322, 0.989531, 0, 1.07739, 3.22652)
+
+[node name="Player" parent="." instance=ExtResource("1_git84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

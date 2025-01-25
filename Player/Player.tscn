@@ -1,53 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://fduqje5puket"]
+[gd_scene load_steps=3 format=3 uid="uid://fduqje5puket"]
 
 [ext_resource type="Script" path="res://Player/Movement.cs" id="1_xqbbu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c7na3"]
 
-[sub_resource type="CSharpScript" id="CSharpScript_3viyv"]
-script/source = "using Godot;
-
-public class CameraFollow : Node3D
-{
-	[Export] public NodePath targetPath; // El personaje al que la cámara seguirá
-	[Export] public float smoothSpeed = 5f; // Velocidad de seguimiento
-	[Export] public Vector3 offset = new Vector3(0, 5, -10); // Desfase de la cámara respecto al personaje
-
-	private Camera3D camera; // Referencia a la cámara
-	private Node3D target; // El nodo del personaje
-
-	public override void _Ready()
-	{
-		// Obtener el nodo del personaje y la cámara
-		target = GetNode<Node3D>(targetPath); 
-		camera = GetNode<Camera3D>(\"Camera3D\");
-	}
-
-	public override void _Process(float delta)
-	{
-		if (target != null)
-		{
-			// Calcula la posición de la cámara con el desfase
-			Vector3 targetPosition = target.GlobalPosition + offset;
-
-			// Suaviza el movimiento de la cámara
-			camera.GlobalPosition = camera.GlobalPosition.LinearInterpolate(targetPosition, smoothSpeed * delta);
-		}
-	}
-}
-"
-
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0562774, 0)
 script = ExtResource("1_xqbbu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11946, 0)
 shape = SubResource("BoxShape3D_c7na3")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08648, 0)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.559049, 2.85495)
-script = SubResource("CSharpScript_3viyv")
