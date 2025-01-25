@@ -26,6 +26,7 @@ public partial class Colisiones : Node3D
 
 [node name="Burbuja" type="Node3D"]
 script = ExtResource("2_je25h")
+speed = null
 
 [node name="Column" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_hkort")

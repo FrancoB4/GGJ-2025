@@ -7,6 +7,7 @@ public partial class Movement : CharacterBody3D
 	public const float JumpVelocity = 5.0f; // Velocidad del salto
 	public const float FloatVelocity = 0.0f; // Velocidad para mantener la altura
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
+	public const float AscendRate = 1f;
 	
 	private bool isJumping = false; // Verifica si el usuario está saltando
 
@@ -14,6 +15,10 @@ public partial class Movement : CharacterBody3D
 	{
 		// Obtener la velocidad actual del personaje
 		Vector3 velocity = Velocity;
+		
+		
+		
+		
 
 		if (Input.IsActionPressed("ui_accept"))
 		{
@@ -30,7 +35,11 @@ public partial class Movement : CharacterBody3D
 			// Mantenerse flotando si no se presiona nada
 			velocity.Y = FloatVelocity;
 		}
-
+		
+		if (IsOnFloor() || !IsOnFloor()){
+			velocity.Y += AscendRate * (float)delta;
+		}
+		
 		// Movimiento en el plano horizontal
 		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();

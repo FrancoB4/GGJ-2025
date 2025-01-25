@@ -1,0 +1,14 @@
+Label
+Control
+VBoxContainer
+MarginContainer
+MeshInstance3D
+CollisionShape3D
+Area3D
+StaticBody3D
+Camera3D
+AnimatedSprite3D
+CharacterBody3D
+Sprite3D
+CollisionShape2D
+Node3D

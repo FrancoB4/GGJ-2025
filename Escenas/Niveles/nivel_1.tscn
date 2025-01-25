@@ -24,5 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 0.842481, 0.538727, 0, -0.538727, 0.842481, 
 
 [node name="Burbuja" parent="." instance=ExtResource("3_1n2bv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2035, -6.03781, -4.00953)
+speed = null
 
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
