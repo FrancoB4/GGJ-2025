@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=5 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Player.tscn" id="2_p5fkc"]
+[ext_resource type="PackedScene" uid="uid://djkyeyyp00fpe" path="res://Escenas/Burbuja.tscn" id="3_1n2bv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qx0qi"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_p6p35")
@@ -9,5 +12,18 @@ script = ExtResource("1_p6p35")
 [node name="OxigenTimer" type="Timer" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_p5fkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01289, -4.20204)
+
+[node name="Area3D" type="Area3D" parent="Player"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+shape = SubResource("CapsuleShape3D_qx0qi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.842481, 0.538727, 0, -0.538727, 0.842481, 0.0259672, 5.4963, 3.2057)
+
+[node name="Burbuja" parent="." instance=ExtResource("3_1n2bv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2035, -6.03781, -4.00953)
+speed = null
 
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
