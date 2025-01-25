@@ -12,7 +12,7 @@ public partial class Lever : Node3D
 	public override void _Ready()
 	{
 		// Obtén el nodo del Label que mostrará el mensaje
-		interactLabel = GetNode<Label>("Label");
+		interactLabel = GetNode<Label>("Message");
 		
 		Actived = GetNode<Label>("PalancaActivada");
 		Desactived = GetNode<Label>("PalancaDesactivada");
