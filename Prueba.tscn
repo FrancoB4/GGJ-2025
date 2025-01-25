@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnyvvrihk8rl6"]
+[gd_scene load_steps=5 format=3 uid="uid://cnyvvrihk8rl6"]
 
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Player.tscn" id="1_git84"]
+[ext_resource type="PackedScene" uid="uid://sns4lij005cc" path="res://Escenas/Lever.tscn" id="2_g3su6"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mgvvd"]
 size = Vector2(20, 20)
@@ -22,3 +23,6 @@ shape = SubResource("BoxShape3D_av225")
 
 [node name="Player" parent="." instance=ExtResource("1_git84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31165, 0)
+
+[node name="Lever" parent="." instance=ExtResource("2_g3su6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35679, 1.0538, 0)

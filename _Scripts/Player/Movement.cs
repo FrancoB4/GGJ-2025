@@ -7,7 +7,7 @@ public partial class Movement : CharacterBody3D
 	public const float JumpVelocity = 5.0f; // Velocidad del salto
 	public const float FloatVelocity = 0.0f; // Velocidad para mantener la altura
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
-	public const float AscendRate = 5f;
+	public const float AscendRate = 1f;
 	
 	private bool isJumping = false; // Verifica si el usuario está saltando
 
