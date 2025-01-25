@@ -11,6 +11,10 @@ public partial class InterfazIngame : Control
     }
 
     public void ActualizarValor(int value) {
-        progressBar.Value = value;
+        progressBar.OnOxigenoChanges(value);
+    }
+
+    public double Valor() {
+        return progressBar.Value;
     }
 }
