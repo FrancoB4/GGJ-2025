@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgsisffcpteh"]
+
+[ext_resource type="Shader" path="res://Escenas/Filter.gdshader" id="1_6nfec"]
+[ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="2_uajuh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_72quo"]
+noise_type = 2
+frequency = 0.0015
+fractal_type = 2
+fractal_gain = 1.0
+fractal_weighted_strength = 0.65
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wonnv"]
+seamless = true
+seamless_blend_skirt = 0.65
+noise = SubResource("FastNoiseLite_72quo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vdlan"]
+shader = ExtResource("1_6nfec")
+shader_parameter/color = Color(0, 0.658824, 1, 1)
+shader_parameter/speed = Vector2(0.35, 0.17)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_wonnv")
+
+[node name="Filter" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vdlan")
+position = Vector2(573.5, 324.5)
+scale = Vector2(8.99219, 5.10156)
+texture = ExtResource("2_uajuh")

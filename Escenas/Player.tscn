@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://fduqje5puket"]
+[gd_scene load_steps=5 format=3 uid="uid://fduqje5puket"]
 
 [ext_resource type="Script" path="res://_Scripts/Player/Movement.cs" id="1_xqbbu"]
+[ext_resource type="PackedScene" uid="uid://bgsisffcpteh" path="res://Escenas/Filter.tscn" id="2_xjfwh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e2o0x"]
 
@@ -8,6 +9,8 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xqbbu")
+
+[node name="Filter" parent="." instance=ExtResource("2_xjfwh")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_e2o0x")

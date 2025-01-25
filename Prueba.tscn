@@ -26,3 +26,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31165, 0)
 
 [node name="Lever" parent="." instance=ExtResource("2_g3su6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35679, 1.0538, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
