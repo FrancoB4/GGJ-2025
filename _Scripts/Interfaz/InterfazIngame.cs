@@ -51,4 +51,8 @@ public partial class InterfazIngame : Control
         textoGameOver.Visible = true;
         botonReintentar.Visible = true;
     }
+
+    private void RecargarEscena() {
+        GetTree().ChangeSceneToFile("res://Escenas/Niveles/PantallaDeCarga.tscn");
+    }
 }

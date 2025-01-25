@@ -8,6 +8,7 @@ public partial class FiltroPocoOxigeno : ColorRect
     private bool gameOver = false;
     private bool terminar = false;
 	public override void _Ready() {
+        GD.Print((Material as ShaderMaterial).GetShaderParameter("center_color"));
     }
 
     public override void _Process(double delta) {
@@ -39,5 +40,13 @@ public partial class FiltroPocoOxigeno : ColorRect
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(this, "centerColor", new Vector4(0, 0, 0, 1), 2)
         .SetTrans(Tween.TransitionType.Linear);
+    }
+
+    private void RecargarEscena() {
+        gameOver = false;
+        terminar = false;
+        centerColor = Vector4.Zero;
+        (Material as ShaderMaterial).SetShaderParameter("center_color", centerColor);
+        effectStrength = 0f;
     }
 }

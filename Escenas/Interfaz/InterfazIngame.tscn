@@ -83,3 +83,5 @@ text = "Reintentar"
 [connection signal="ActivarFiltro" from="." to="ColorRect" method="Activar"]
 [connection signal="ActivarFiltroGameOverSignal" from="." to="ColorRect" method="FiltroGameOver"]
 [connection signal="DesactivarFiltro" from="." to="ColorRect" method="Desactivar"]
+[connection signal="pressed" from="BotonReintentar" to="." method="RecargarEscena"]
+[connection signal="pressed" from="BotonReintentar" to="ColorRect" method="RecargarEscena"]

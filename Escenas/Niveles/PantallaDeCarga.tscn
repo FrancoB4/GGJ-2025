@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjmcbsgnsk2jh"]
+
+[ext_resource type="Script" path="res://addons/tattomoosa.spinner/spinner.gd" id="1_ldjl6"]
+[ext_resource type="Script" path="res://Escenas/Niveles/PantallaDeCarga.cs" id="1_nbund"]
+
+[sub_resource type="Theme" id="Theme_2njha"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7y1h"]
+font_size = 30
+
+[node name="PantallaDeCarga" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbund")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_2njha")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -534.0
+offset_top = -21.0
+offset_right = 534.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "A veces la mejor forma de no morir, es no morir."
+label_settings = SubResource("LabelSettings_v7y1h")
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 56.0
+offset_right = 20.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+fill_mode = 4
+script = ExtResource("1_ldjl6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerOut"]

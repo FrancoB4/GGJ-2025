@@ -6,6 +6,7 @@ public partial class GameManager : Node
     [Signal]
     public delegate void GameOverSignalEventHandler();
 	public static GameManager Instancia { get; private set; }
+    public int nivel = 1;
     private InterfazIngame interfazIngame;
 	private int oxigeno;
 	private bool pocoOxigeno = false;
@@ -63,4 +64,9 @@ public partial class GameManager : Node
         interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
+
+    public void Reiniciar() {
+        oxigeno = 60;
+        pocoOxigeno = false;
+    }
 }
