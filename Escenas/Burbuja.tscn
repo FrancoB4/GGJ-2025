@@ -1,41 +1,57 @@
-[gd_scene load_steps=5 format=3 uid="uid://djkyeyyp00fpe"]
+[gd_scene load_steps=6 format=3 uid="uid://djkyeyyp00fpe"]
 
-[ext_resource type="ArrayMesh" uid="uid://dr0bubxoup1q1" path="res://Props/Column.obj" id="2_hkort"]
 [ext_resource type="Script" path="res://_Scripts/Burbuja/Burbuja.cs" id="2_je25h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjtwh"]
-height = 5.23188
+height = 9.24431
 
-[sub_resource type="CSharpScript" id="CSharpScript_lwfg4"]
-script/source = "using Godot;
-using System;
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7lrwc"]
+emission_shape = 3
+emission_box_extents = Vector3(0.4, 0, 0.4)
+angle_min = 1.07288e-05
+angle_max = 437.4
+gravity = Vector3(0, 1, 0)
+color = Color(0.662745, 1, 1, 0.443137)
+turbulence_enabled = true
+turbulence_noise_strength = 0.36
+turbulence_noise_scale = 1.287
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.03
 
-public partial class Colisiones : Node3D
-{
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ed6y"]
+transparency = 1
+vertex_color_use_as_albedo = true
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-}
-"
+[sub_resource type="SphereMesh" id="SphereMesh_wl6f1"]
+material = SubResource("StandardMaterial3D_6ed6y")
+radius = 0.02
+height = 0.04
 
 [node name="Burbuja" type="Node3D"]
 script = ExtResource("2_je25h")
-speed = null
 
-[node name="Column" type="MeshInstance3D" parent="."]
-mesh = ExtResource("2_hkort")
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.347435, 0)
+omni_range = 0.56
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37225, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.10368, 0)
 shape = SubResource("CapsuleShape3D_hjtwh")
-script = SubResource("CSharpScript_lwfg4")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 30
+amount_ratio = 0.4
+lifetime = 2.4
+preprocess = 0.46
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_7lrwc")
+draw_pass_1 = SubResource("SphereMesh_wl6f1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
 
 [connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area3D" to="." method="OnBodyExited"]
+[connection signal="timeout" from="Timer" to="." method="OnOxigenoTimerTimeout"]
