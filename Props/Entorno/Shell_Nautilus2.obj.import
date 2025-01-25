@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfof2w1eab618"
+path="res://.godot/imported/Shell_Nautilus2.obj-ff454b9e8e002c15c4bfb856ff213164.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shell_Nautilus2.obj-ff454b9e8e002c15c4bfb856ff213164.mesh"]
+
+source_file="res://Props/Entorno/Shell_Nautilus2.obj"
+dest_files=["res://.godot/imported/Shell_Nautilus2.obj-ff454b9e8e002c15c4bfb856ff213164.mesh", "res://.godot/imported/Shell_Nautilus2.obj-ff454b9e8e002c15c4bfb856ff213164.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -47,8 +47,7 @@ public partial class GameManager : Node
 			PocoOxigenoFilterOff();
             pocoOxigeno = false;
 		}
-        interfazIngame.ActualizarValor(oxigeno);
-		GD.Print(oxigeno);
+        
 	}
 
 	public void QuitarOxigeno(int cant) {
