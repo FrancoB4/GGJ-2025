@@ -6,14 +6,13 @@ public partial class Movement : CharacterBody3D
 	public const float Speed = 5.0f; // Velocidad de movimiento
 	public const float JumpVelocity = 10f; // Velocidad del salto
 	public const float FloatVelocity = 2.0f; // Velocidad mientras flota
+	
+	private bool isJumping = false; // Verifica si el usuario está saltando
 
 	public override void _PhysicsProcess(double delta)
 	{
 		// Obtener la velocidad actual del personaje
 		Vector3 velocity = Velocity;
-
-		
-		
 
 		 if (Input.IsActionPressed("ui_accept"))
 		{
@@ -24,9 +23,6 @@ public partial class Movement : CharacterBody3D
 		{
 			velocity += GetGravity() * (float)delta;
 		}
-		
-		
-		
 
 		// Movimiento en el plano horizontal
 		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
