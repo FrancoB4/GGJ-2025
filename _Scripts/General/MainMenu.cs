@@ -31,7 +31,7 @@ public partial class MainMenu : Control
 	{
 		// Menu de opciones
 		GD.Print("Abriendo las opciones...");
-		GetTree().ChangeSceneToFile("res://Scenes/Options_Menu.tscn"); // Asegúrate de ajustar la ruta de la escena
+		OptionsMenu.Visible = true;
 	}
 
 
