@@ -6,11 +6,17 @@ public partial class Lever : Node3D
 	private bool isPlayerNearby = false; // Indica si el jugador está dentro del área
 	private Label interactLabel; // Referencia al mensaje de interacción
 	private bool isLeverActive = false; // Estado de la palanca
+	private Label Actived;
+	private Label Desactived;
 
 	public override void _Ready()
 	{
 		// Obtén el nodo del Label que mostrará el mensaje
 		interactLabel = GetNode<Label>("Label");
+		
+		Actived = GetNode<Label>("PalancaActivada");
+		Desactived = GetNode<Label>("PalancaDesactivada");
+		
 		interactLabel.Visible = false; // Oculta el mensaje inicialmente
 	}
 
@@ -35,7 +41,7 @@ public partial class Lever : Node3D
 	public override void _Process(double delta)
 	{
 		// Verifica si el jugador está cerca y presionó la tecla de interacción
-		if (isPlayerNearby && Input.IsActionJustPressed("ui_accept"))
+		if (isPlayerNearby && Input.IsActionJustPressed("ui_interactive"))
 		{
 			ToggleLever();
 		}
