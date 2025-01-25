@@ -20,14 +20,10 @@ public partial class Player : CharacterBody3D
 		if (Input.IsActionJustPressed("ui_accept"))
 		{
 			velocity.Y += JumpVelocity;
-		} else {
-			while(velocity.Y > 0){
-				velocity.Y += GetGravity() * delta
-			}
 		}
 		
 		if (IsOnFloor()){
-			velocity.Y
+			velocity.Y = 0;
 		}
 
 		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
