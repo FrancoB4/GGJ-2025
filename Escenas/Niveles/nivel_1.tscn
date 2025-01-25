@@ -10,4 +10,8 @@ script = ExtResource("1_p6p35")
 
 [node name="InterfazIngame" parent="." instance=ExtResource("4_gpu1u")]
 
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.33101e-08, -0.135197, 0.990819, -5.90964e-09, 0.990819, 0.135197, -1, 1.19904e-14, -4.37114e-08, 111.112, 4.72518, 0)
+fov = 110.186
+
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
