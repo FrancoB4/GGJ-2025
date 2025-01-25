@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlfcegky6fyke"]
+
+[ext_resource type="Script" path="res://_Scripts/Enemigos/Orca.cs" id="1_gwb1t"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qd67p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dfe8"]
+
+[node name="Orca" type="Node3D"]
+script = ExtResource("1_gwb1t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_qd67p")
+skeleton = NodePath("")
+
+[node name="CooldownAtaque" type="Timer" parent="."]
+wait_time = 2.25
+one_shot = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_7dfe8")
+
+[connection signal="timeout" from="CooldownAtaque" to="." method="OnCooldownAtaqueTimeout"]
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

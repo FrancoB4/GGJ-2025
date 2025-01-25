@@ -45,7 +45,7 @@ public partial class Burbuja : Node3D
     private void OnOxigenoTimerTimeout() {
         GameManager.Instancia.AgregarOxigeno(1);
         oxigenoTotal--;
-        if (oxigenoTotal == 0) {
+        if (oxigenoTotal == 1) {
             QueueFree();
         }
         gpuParticles3D.Amount -= 1;
