@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://fduqje5puket"]
+[gd_scene load_steps=7 format=3 uid="uid://fduqje5puket"]
 
 [ext_resource type="Script" path="res://_Scripts/Player/Movement.cs" id="1_xqbbu"]
 [ext_resource type="PackedScene" uid="uid://bgsisffcpteh" path="res://Escenas/Filter.tscn" id="2_xjfwh"]
@@ -7,6 +7,8 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_e2o0x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60e7r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qquox"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_xqbbu")
@@ -25,3 +27,6 @@ shape = SubResource("CapsuleShape3D_60e7r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0634511, 0.280637, 3.19783)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qquox")
