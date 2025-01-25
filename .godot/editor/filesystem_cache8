@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1737773802
+icon.svg::CompressedTexture2D::1940732145216412694::1737773768::1737773802::1::::<><>::
+Prueba.tscn::PackedScene::-1::1737773768::0::1::::<><>::
+::res://Player/::1737774088
+Player.cs::CSharpScript::-1::1737773768::0::1::::<><>::
+Player.tscn::PackedScene::358380744283423379::1737773768::0::1::::<><>::res://Player/Player.cs
+Estadisticas.cs::CSharpScript::-1::1737774088::0::1::::<><>::
