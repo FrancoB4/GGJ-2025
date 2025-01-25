@@ -4,9 +4,8 @@ using System;
 public partial class MainMenu : Control
 {
 	private Button _startButton;
-	private Button _exitButton;
 	private Button _optionsButton;
-	private Label _titleLabel;
+	private Button _exitButton;
 
 	public override void _Ready()
 	{
@@ -17,7 +16,7 @@ public partial class MainMenu : Control
 		
 		// Conectar señales de los botones
 		_startButton.Pressed += OnStartButtonPressed;
-		_optionsButton.Pressed += OnOptionsButtonPressed
+		_optionsButton.Pressed += OnOptionsButtonPressed;
 		_exitButton.Pressed += OnExitButtonPressed;
 	}
 
@@ -25,20 +24,21 @@ public partial class MainMenu : Control
 	{
 		// Cambia a la escena principal del juego
 		GD.Print("Iniciando el juego...");
-		GetTree().ChangeSceneToFile("res://Scenes/Game.tscn"); // Asegúrate de ajustar la ruta de la escena
+		GetTree().ChangeSceneToFile("res://Prueba.tscn"); // Asegúrate de ajustar la ruta de la escena
 	}
+
+	private void OnOptionsButtonPressed()
+	{
+		// Menu de opciones
+		GD.Print("Abriendo las opciones...");
+		GetTree().ChangeSceneToFile("res://Scenes/Options_Menu.tscn"); // Asegúrate de ajustar la ruta de la escena
+	}
+
 
 	private void OnExitButtonPressed()
 	{
 		// Salir del juego
 		GD.Print("Saliendo del juego...");
 		GetTree().Quit();
-	}
-
-	private void OnOptionsButtonPressed()
-	{
-		// Mostrar créditos
-		GD.Print("Mostrando créditos...");
-		GetTree().ChangeSceneToFile("res://Scenes/Options_Menu.tscn"); // Asegúrate de ajustar la ruta de la escena
 	}
 }
