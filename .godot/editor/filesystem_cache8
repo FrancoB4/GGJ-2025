@@ -1,18 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1737777899
-icon.svg::CompressedTexture2D::1940732145216412694::1737773768::1737777900::1::::<><>::
-Prueba.tscn::PackedScene::5736154864886272481::1737777899::0::1::::<><>::uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
-::res://_Scripts/::1737777899
-::res://_Scripts/General/::1737774342
-GameManager.cs::CSharpScript::-1::1737777115::0::1::::<><>::
-::res://_Scripts/Player/::1737777899
-Movement.cs::CSharpScript::-1::1737777864::0::1::::<><>::
-Player.tscn::PackedScene::358380744283423379::1737777899::0::1::::<><>::res://_Scripts/Player/Movement.cs
-::res://Escenarios/::1737775094
-::res://Escenarios/Nivel 1/::1737777899
-nivel_1.tscn::PackedScene::2148388969205239772::1737777899::0::1::::<><>::res://_Scripts/General/GameManager.cs<>uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
-::res://Props/::1737775739
-Base.obj::Mesh::3438893830625789380::1737775533::1737777900::1::::<><>::
-Bricks2.obj::Mesh::5246041276317622876::1737775568::1737777900::1::::<><>::
-Bricks.obj::Mesh::2082019889706443422::1737775556::1737777900::1::::<><>::
-Column.obj::Mesh::8404178358365507034::1737775586::1737777900::1::::<><>::
+::res://::1737778914
+icon.svg::CompressedTexture2D::1940732145216412694::1737772310::1737778915::1::::<><>::
+Prueba.tscn::PackedScene::5736154864886272481::1737778315::0::1::::<><>::uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
+::res://_Scripts/::1737778315
+::res://_Scripts/General/::1737778315
+GameManager.cs::CSharpScript::-1::1737778315::0::1::::<><>::
+::res://_Scripts/Player/::1737778315
+Movement.cs::CSharpScript::-1::1737778315::0::1::::<><>::
+::res://Escenas/::1737778315
+Player.tscn::PackedScene::358380744283423379::1737778315::0::1::::<><>::res://_Scripts/Player/Movement.cs
+::res://Escenas/Niveles/::1737778315
+nivel_1.tscn::PackedScene::2148388969205239772::1737778315::0::1::::<><>::res://_Scripts/General/GameManager.cs<>uid://fduqje5puket::::res://_Scripts/Player/Player.tscn
+::res://Player/::1737768814
+Idle (32x32).png::CompressedTexture2D::6700631044365942583::1566491976::1737778915::1::::<><>::
+Player.gd::GDScript::-1::1737765281::0::1::::<>CharacterBody3D<>::
+Player.tscn::PackedScene::7507354761066010981::1737768814::0::1::::<><>::uid://c2p3oc7xdjsax::::res://Player/Idle (32x32).png<>uid://oi8318mkkpwm::::res://Player/Run (32x32).png
+Run (32x32).png::CompressedTexture2D::1001213913100211044::1566491966::1737778915::1::::<><>::
+::res://Props/::1737777623
+Base.obj::Mesh::3438893830625789380::1737777617::1737778915::1::::<><>::
+Bricks2.obj::Mesh::5246041276317622876::1737777617::1737778915::1::::<><>::
+Bricks.obj::Mesh::2082019889706443422::1737777617::1737778915::1::::<><>::
+Column.obj::Mesh::8404178358365507034::1737777617::1737778915::1::::<><>::
+::res://Scenes/::1737778590
+Main_Menu.tscn::PackedScene::354679781499108308::1737768814::0::1::::<><>::
+Map.tscn::PackedScene::5821102678115575310::1737768814::0::1::::<><>::uid://de7vbhx7lcakr::::res://Player/Player.tscn
