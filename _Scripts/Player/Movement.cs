@@ -9,17 +9,21 @@ public partial class Movement : CharacterBody3D
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
 	public const float AscendRate = 1f;
 	
+	 private float attackChargeTime = 0f; // Tiempo de carga del ataque
+	private bool isAttacking = false; // Indica si está atacando
+	private const float maxChargeTime = 3f; // Tiempo máximo de carga para un ataque cargado
+	private const float attackPower = 10f; // Potencia base del ataque
+	private const float maxAttackPower = 20f; // Potencia máxima del ataque cargado
+
+	
 	private bool isJumping = false; // Verifica si el usuario está saltando
 
 	public override void _PhysicsProcess(double delta)
 	{
+		//Movimiento
 		// Obtener la velocidad actual del personaje
 		Vector3 velocity = Velocity;
 		
-		
-		
-		
-
 		if (Input.IsActionPressed("ui_accept"))
 		{
 			// Subir cuando se presiona espacio
@@ -61,5 +65,7 @@ public partial class Movement : CharacterBody3D
 
 		// Usar MoveAndSlide para mover el personaje con la física
 		MoveAndSlide();
+		
+		
 	}
 }
