@@ -9,6 +9,13 @@ public partial class Movement : CharacterBody3D
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
 	public const float AscendRate = 1f;
 	
+	 private float attackChargeTime = 0f; // Tiempo de carga del ataque
+	private bool isAttacking = false; // Indica si está atacando
+	private const float maxChargeTime = 3f; // Tiempo máximo de carga para un ataque cargado
+	private const float attackPower = 10f; // Potencia base del ataque
+	private const float maxAttackPower = 20f; // Potencia máxima del ataque cargado
+
+	
 	private bool isJumping = false; // Verifica si el usuario está saltando
 
 	public override void _PhysicsProcess(double delta)
@@ -59,53 +66,6 @@ public partial class Movement : CharacterBody3D
 		// Usar MoveAndSlide para mover el personaje con la física
 		MoveAndSlide();
 		
-		//Ataque
-		if (Input.IsActionPressed("mouse_left")) // "mouse_left" es la acción por defecto para el clic izquierdo
-		{
-			// Si está presionado, cargamos el ataque
-			if (attackChargeTime < maxChargeTime){
-				attackChargeTime += (float)delta; // Aumentamos el tiempo de carga
-			}
-			if (!isAttacking)
-			{
-				isAttacking = true;
-				Attack();
-			}
-			} else
-				{
-				// Si el clic se suelta, realizamos el ataque cargado
-					if (isAttacking)
-				{
-				isAttacking = false;
-				ReleaseAttack();
-			}
-			// Si no está presionado, resetear el tiempo de carga
-			attackChargeTime = 0f;
-		}
 		
 	}
 }
-
-private void Attack()
-	{
-		GD.Print("Ataque iniciado!");
-
-		// Aquí puedes agregar lógica para realizar el ataque
-		// Ejemplo: Reproducir una animación de ataque
-		// $AnimationPlayer.Play("Attack");
-
-		// Puedes aplicar el daño según el nivel de carga del ataque
-		float currentAttackPower = Mathf.Lerp(attackPower, maxAttackPower, attackChargeTime / maxChargeTime);
-		GD.Print($"Ataque con poder: {currentAttackPower}");
-
-		// Aquí deberías colocar la lógica de impacto (colisiones, daño, etc.)
-	}
-
-	private void ReleaseAttack()
-	{
-		GD.Print("Ataque liberado!");
-
-		// Lógica para finalizar el ataque (si tienes efectos visuales, puedes deternelos aquí)
-		// Ejemplo: Detener la animación de ataque
-		// $AnimationPlayer.Stop();
-	}
