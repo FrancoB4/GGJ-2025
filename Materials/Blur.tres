@@ -4,8 +4,8 @@
 
 [resource]
 shader = ExtResource("1_t27ev")
-shader_parameter/blur_radius = 8
-shader_parameter/blur_strength = 10.0
-shader_parameter/fade_direction = 0
-shader_parameter/fade_cutoff = 0.2
-shader_parameter/fade_intensity = 2.0
+shader_parameter/blur_radius = 10
+shader_parameter/blur_strength = 4.26
+shader_parameter/fade_direction = 2
+shader_parameter/fade_cutoff = 1.0
+shader_parameter/fade_intensity = 0.1

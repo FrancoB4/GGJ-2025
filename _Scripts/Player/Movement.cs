@@ -16,10 +16,6 @@ public partial class Movement : CharacterBody3D
 		// Obtener la velocidad actual del personaje
 		Vector3 velocity = Velocity;
 		
-		
-		
-		
-
 		if (Input.IsActionPressed("ui_accept"))
 		{
 			// Subir cuando se presiona espacio
