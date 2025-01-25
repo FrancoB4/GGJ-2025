@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgsisffcpteh"]
 
-[ext_resource type="Shader" path="res://Escenas/Filter.gdshader" id="1_6nfec"]
+[ext_resource type="Shader" path="res://Materials/Filter.gdshader" id="1_6nfec"]
 [ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="2_uajuh"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_72quo"]
@@ -18,7 +18,7 @@ noise = SubResource("FastNoiseLite_72quo")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vdlan"]
 shader = ExtResource("1_6nfec")
 shader_parameter/color = Color(0, 0.658824, 1, 1)
-shader_parameter/speed = Vector2(0.35, 0.17)
+shader_parameter/speed = Vector2(0.03, 0.07)
 shader_parameter/wave_strength = 2.0
 shader_parameter/fast_noise = SubResource("NoiseTexture2D_wonnv")
 
