@@ -26,7 +26,7 @@ project/assembly_name="GameJam-2025"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/tattomoosa.spinner/plugin.cfg")
 
 [global_group]
 
