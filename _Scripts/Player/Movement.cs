@@ -9,11 +9,9 @@ public partial class Movement : CharacterBody3D
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
 	public const float AscendRate = 1f;
 	
-	private bool isAttacking = false; // Indica si está atacando
+	private bool isAttack = false;
+	private const float VelocityAttack = 5.0f;
 	private const float attackPower = 20f; // Potencia base del ataque
-	public bool waitAnimation = false;
-	
-	private bool isJumping = false; // Verifica si el usuario está saltando
 	
 	private AnimatedSprite3D _animatedSprite3D;
 	
@@ -32,11 +30,13 @@ public partial class Movement : CharacterBody3D
 		{
 			// Subir cuando se presiona espacio
 			velocity.Y = JumpVelocity;
+			
 		}
 		else if (Input.IsActionPressed("move_down"))
 		{
 			// Bajar cuando se presiona shift
 			velocity.Y = DescendVelocity;
+			
 		}
 		else
 		{
@@ -48,10 +48,19 @@ public partial class Movement : CharacterBody3D
 			velocity.Y += AscendRate * (float)delta;
 		}
 		
+		
+		
 		// Movimiento en el plano horizontal
 		Vector2 inputDir = Input.GetVector("move_left", "move_right", "move_approach", "move_away");
 		Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-
+		
+		if(Input.IsActionPressed("attack"))
+		{
+			velocity.X += VelocityAttack * (float)delta;
+			isAttack = true;
+			
+		}
+		
 		// Actualizar la velocidad en los ejes X y Z
 		if (direction != Vector3.Zero)
 		{
@@ -63,6 +72,8 @@ public partial class Movement : CharacterBody3D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed * (float)delta);
 			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed * (float)delta);
 		}
+		
+		
 
 		// Asignar la velocidad calculada y mover al personaje
 		Velocity = velocity;
@@ -73,20 +84,30 @@ public partial class Movement : CharacterBody3D
 	}
 	
 	public void SelectAnimation()
-	{
-		if (Velocity.X == 0)
-		{
-			_animatedSprite3D.Play("idle");
+	{	if (!isAttack){
+			if (Velocity.X == 0 )
+			{
+				_animatedSprite3D.Play("idle");
+			} else if (Velocity.X < 0) {
+				_animatedSprite3D.Play("swimming");
+				_animatedSprite3D.FlipH = true;
+			}
+			 else if (Velocity.X > 0) {
+				_animatedSprite3D.Play("swimming");
+				_animatedSprite3D.FlipH = false;
+			}
 		}
-		else if (Velocity.X < 0)
+		else
 		{
-			_animatedSprite3D.FlipH = true;
-			_animatedSprite3D.Play("swimming");
+			_animatedSprite3D.Play("charged_attack");
 		}
-		else if (Velocity.X > 0)
-		{
-			_animatedSprite3D.FlipH = false;
-			_animatedSprite3D.Play("swimming");
+		
+	}
+	
+	public void OnAnimatedSprite3DAnimationFinished(){
+		if(_animatedSprite3D.Animation == "charged_attack"){
+			isAttack = false;
 		}
+		
 	}
 }
