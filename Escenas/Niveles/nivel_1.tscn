@@ -19,9 +19,6 @@ data = PackedVector3Array(-0.2722, 0.9246, 19.6526, 0.3305, 0.8317, 19.2987, 0.2
 [sub_resource type="Environment" id="Environment_t10sq"]
 background_mode = 1
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8yyr"]
-albedo_texture = ExtResource("7_7x20o")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_jj22n"]
 size = Vector3(123.301, 36.1711, 1)
 
@@ -30,6 +27,9 @@ size = Vector3(36.0371, 32.1116, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bkuhm"]
 size = Vector3(30.0234, 2024.35, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8yyr"]
+albedo_texture = ExtResource("7_7x20o")
 
 [node name="Nivel" type="Node3D"]
 script = ExtResource("1_p6p35")
@@ -56,7 +56,7 @@ mesh = ExtResource("3_bqbg7")
 shape = SubResource("ConcavePolygonShape3D_sxsa8")
 
 [node name="Player" parent="." instance=ExtResource("4_ktj5m")]
-transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 14.3815, 11.3696, 1.95936)
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 22.7693, 11.3696, 7.81382)
 Speed = 7.0
 
 [node name="Camera3D2" type="Camera3D" parent="Player"]
@@ -71,11 +71,6 @@ light_energy = 0.45
 light_indirect_energy = 3.277
 omni_range = 16.503
 omni_attenuation = -0.49
-
-[node name="Crate" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 13.6806, 7.41588, 0.759038)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
 
 [node name="Limites" type="Node3D" parent="."]
 
@@ -126,6 +121,74 @@ transform = Transform3D(0.993473, -0.112205, -0.0205468, 0.11166, 0.993407, -0.0
 
 [node name="Burbuja6" parent="Burbujas" instance=ExtResource("3_g6g08")]
 transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
+
+[node name="Burbuja7" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 47.8918, 14.8314, -5.54643)
+
+[node name="Burbuja8" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 51.5456, 8.87826, 10.4382)
+
+[node name="Burbuja9" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
+
+[node name="Burbuja10" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 74.0379, 14.6352, 10.1257)
+
+[node name="Burbuja11" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 63.6871, 11.9332, 4.42256)
+
+[node name="Burbuja12" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 89.4411, 21.7084, 12.1661)
+
+[node name="Burbuja13" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 81.8313, 16.4794, -6.72363)
+
+[node name="Burbuja14" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 90.8171, 20.7905, 3.90701)
+
+[node name="Burbuja15" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 94.8114, 20.7125, -6.72363)
+
+[node name="Burbuja16" parent="Burbujas" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 64.1058, 15.8751, -10.0778)
+
+[node name="Crates" type="Node3D" parent="."]
+
+[node name="Crate" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.911665, -0.295559, -0.2855, -0.26832, 0.954357, -0.131177, 0.31124, -0.0429841, -0.949359, 13.6806, 5.41833, -9.73069)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
+
+[node name="Crate2" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.774434, -0.621669, 0.117388, -0.609248, 0.782835, 0.12644, -0.170499, 0.0264007, -0.985004, 45.5127, 8.09564, 11.9795)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
+
+[node name="Crate3" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.973404, 0.150726, 0.172531, -0.16666, 0.0508474, -0.984702, -0.157192, -0.987267, -0.0243751, 62.7377, 14.8662, -3.31221)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
+
+[node name="Crate4" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 78.3998, 14.7694, 11.9795)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
+
+[node name="Crate6" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 23.6735, 8.09564, 11.9795)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
+
+[node name="Crate7" type="MeshInstance3D" parent="Crates"]
+transform = Transform3D(-0.567643, 0.81447, 0.120086, 0.805426, 0.579605, -0.12388, -0.170499, 0.0264007, -0.985004, -10.1325, 0.894503, 11.9795)
+material_override = SubResource("StandardMaterial3D_y8yyr")
+mesh = ExtResource("8_l1lqa")
+skeleton = NodePath("../..")
 
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]

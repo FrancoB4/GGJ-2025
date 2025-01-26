@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://6t7cahhoppp2" path="res://addons/Assets/menu principal/mohoso/play mohoso.png" id="4_dud4h"]
 [ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="5_6k8f8"]
 [ext_resource type="Texture2D" uid="uid://c5wksh24h3j3f" path="res://addons/Assets/menu principal/mohoso/options mohoso.png" id="5_ixgbr"]
-[ext_resource type="Material" uid="uid://ktnui7hb7hiy" path="res://Materials/Filtro_material_menu.tres" id="5_o2opf"]
+[ext_resource type="Material" uid="uid://bhc8dyyt25oxf" path="res://Materials/Filtro_material_menu.tres" id="5_o2opf"]
 [ext_resource type="Texture2D" uid="uid://ow6yytoegw3p" path="res://addons/Assets/menu principal/mohoso/exit mohoso.png" id="6_oqxm2"]
 [ext_resource type="Script" path="res://Scenes/MenuPrincipalNiveles.cs" id="7_0ardx"]
 [ext_resource type="Script" path="res://Scenes/NivelButton.cs" id="8_gvapf"]
