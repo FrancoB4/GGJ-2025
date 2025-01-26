@@ -417,15 +417,15 @@ script = ExtResource("1_gwb1t")
 [node name="CooldownAtaque" type="Timer" parent="."]
 wait_time = 2.25
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="OrcaBody" type="RigidBody3D" parent="."]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OrcaBody"]
 transform = Transform3D(0.351025, 0.936366, 0, -0.936366, 0.351025, 0, 0, 0, 1, 1.10132, -0.334, 0)
 shape = SubResource("CapsuleShape3D_pfyll")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="OrcaArea" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrcaArea"]
 transform = Transform3D(0.351025, 0.936366, 0, -0.936366, 0.351025, 0, 0, 0, 1, 1.10132, -0.334, 0)
 shape = SubResource("CapsuleShape3D_pfyll")
 
@@ -435,5 +435,5 @@ animation = &"attack"
 frame_progress = 0.88623
 
 [connection signal="timeout" from="CooldownAtaque" to="." method="OnCooldownAtaqueTimeout"]
-[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]
-[connection signal="body_exited" from="Area3D" to="." method="OnBodyExited"]
+[connection signal="body_entered" from="OrcaArea" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="OrcaArea" to="." method="OnBodyExited"]

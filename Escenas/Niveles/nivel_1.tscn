@@ -266,18 +266,6 @@ transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0
 [node name="Crates2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.934, 18.7596, 0.0149131)
 
-[node name="Crate" parent="Crates2"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-script = null
-
 [node name="Crate5" parent="Crates2" instance=ExtResource("8_k3c6y")]
 transform = Transform3D(0.716789, -0.69729, 0, 0.617246, 0.634507, -0.465197, 0.324378, 0.333448, 0.885207, -36.6738, -3.54073, 12.6545)
 
