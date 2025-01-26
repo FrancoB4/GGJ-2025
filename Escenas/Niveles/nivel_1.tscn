@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Prefabs/Player.tscn" id="4_ktj5m"]
 [ext_resource type="PackedScene" uid="uid://dlfcegky6fyke" path="res://Escenas/Enemigos/Orca.tscn" id="6_nh1x4"]
 [ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
-[ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/crate.tscn" id="9_tsml1"]
+[ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/Crate.tscn" id="9_tsml1"]
 [ext_resource type="PackedScene" path="res://Escenas/Prefabs/Barril.tscn" id="10_h7xwt"]
 [ext_resource type="PackedScene" path="res://Escenas/Prefabs/Piedra.tscn" id="11_wr8cs"]
 [ext_resource type="PackedScene" path="res://Escenas/Prefabs/Piedra2.tscn" id="12_pdln8"]
