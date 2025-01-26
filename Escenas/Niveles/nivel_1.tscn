@@ -36,9 +36,9 @@ script = ExtResource("1_p6p35")
 nivel = 1
 
 [node name="Orca" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_nh1x4")]
-transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 7.3577, 16.142, -0.438412)
-speed = 5.0
-"daño" = 10
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, -1.68934, 6.54585, -0.716679)
+speed = 10.0
+"daño" = 15
 player = NodePath("../Player")
 
 [node name="OxigenTimer" type="Timer" parent="."]
@@ -111,13 +111,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59209, -6.78518)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59209, 8.19814)
 
 [node name="Burbuja3" parent="Burbujas" instance=ExtResource("3_g6g08")]
-transform = Transform3D(0.914642, 0.397652, 0.0728177, -0.404264, 0.899682, 0.164749, 0, -0.180124, 0.983644, 23.2173, 8.18639, 8.19814)
+transform = Transform3D(0.969757, -0.240079, -0.0439631, 0.244071, 0.953895, 0.174677, 1.28386e-08, -0.180124, 0.983644, 16.4218, 8.18639, 8.19814)
 
 [node name="Burbuja4" parent="Burbujas" instance=ExtResource("3_g6g08")]
 transform = Transform3D(0.837709, 0.537184, 0.0983689, -0.546117, 0.824008, 0.150892, 6.024e-09, -0.180124, 0.983644, 23.0742, 8.18639, -1.59941)
 
 [node name="Burbuja5" parent="Burbujas" instance=ExtResource("3_g6g08")]
-transform = Transform3D(0.993473, -0.112205, -0.0205468, 0.11166, 0.993407, -0.0259669, 0.0233249, 0.0235032, 0.999452, 32.1706, 7.90165, -1.59941)
+transform = Transform3D(0.993473, -0.112205, -0.0205468, 0.11166, 0.993407, -0.0259669, 0.0233249, 0.0235032, 0.999452, 35.5462, 9.81534, -7.15194)
 
 [node name="Burbuja6" parent="Burbujas" instance=ExtResource("3_g6g08")]
 transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
@@ -179,13 +179,13 @@ mesh = ExtResource("8_l1lqa")
 skeleton = NodePath("../..")
 
 [node name="Crate6" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 23.6735, 8.09564, 11.9795)
+transform = Transform3D(-0.94929, -0.272386, 0.157017, -0.264157, 0.961826, 0.0715036, -0.170499, 0.0264007, -0.985004, 20.6106, 6.89872, 11.9795)
 material_override = SubResource("StandardMaterial3D_y8yyr")
 mesh = ExtResource("8_l1lqa")
 skeleton = NodePath("../..")
 
 [node name="Crate7" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.567643, 0.81447, 0.120086, 0.805426, 0.579605, -0.12388, -0.170499, 0.0264007, -0.985004, -10.1325, 0.894503, 11.9795)
+transform = Transform3D(-0.567643, 0.81447, 0.120086, 0.805426, 0.579605, -0.12388, -0.170499, 0.0264007, -0.985004, -11.2326, 1.08497, 11.9795)
 material_override = SubResource("StandardMaterial3D_y8yyr")
 mesh = ExtResource("8_l1lqa")
 skeleton = NodePath("../..")

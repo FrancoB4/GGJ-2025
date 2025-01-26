@@ -22,18 +22,18 @@ public partial class Orca : Node3D
 		cooldownAtaque = GetNode<Timer>("CooldownAtaque");
 	}
 
-    public override void _Process(double delta)
-    {
-        if (Position.X > player.Position.X) {
-            GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = true;
-        }
-        else {
-            GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = false;
-        }
-    }
+	public override void _Process(double delta)
+	{
+		if (Position.X > player.Position.X) {
+			GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = true;
+		}
+		else {
+			GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = false;
+		}
+	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _PhysicsProcess(double delta)
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _PhysicsProcess(double delta)
 	{
 		if (!enCooldownAtaque) {
 			if (Position.DistanceTo(player.Position) < 15) {
