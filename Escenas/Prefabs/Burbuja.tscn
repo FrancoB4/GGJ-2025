@@ -24,8 +24,8 @@ vertex_color_use_as_albedo = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_wl6f1"]
 material = SubResource("StandardMaterial3D_6ed6y")
-radius = 0.04
-height = 0.08
+radius = 0.08
+height = 0.16
 
 [node name="Burbuja" type="Node3D"]
 script = ExtResource("1_p442j")

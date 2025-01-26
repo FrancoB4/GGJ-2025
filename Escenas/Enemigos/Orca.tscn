@@ -416,18 +416,17 @@ script = ExtResource("1_gwb1t")
 
 [node name="CooldownAtaque" type="Timer" parent="."]
 wait_time = 2.25
-one_shot = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(0.447946, 0.89406, 0, -0.89406, 0.447946, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.351025, 0.936366, 0, -0.936366, 0.351025, 0, 0, 0, 1, 1.10132, -0.334, 0)
 shape = SubResource("CapsuleShape3D_pfyll")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.447946, 0.89406, 0, -0.89406, 0.447946, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.351025, 0.936366, 0, -0.936366, 0.351025, 0, 0, 0, 1, 1.10132, -0.334, 0)
 shape = SubResource("CapsuleShape3D_pfyll")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]

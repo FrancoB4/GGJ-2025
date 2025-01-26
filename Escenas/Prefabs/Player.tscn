@@ -199,8 +199,8 @@
 [ext_resource type="Texture2D" uid="uid://yys3dj6puxpf" path="res://Animations/Player/Charge/Armature_animtion0_48.png" id="101_eqse4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_60e7r"]
-radius = 0.882348
-height = 2.46154
+radius = 0.948955
+height = 2.58767
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vtab"]
 atlas = ExtResource("4_3ram8")
@@ -1127,4 +1127,11 @@ shape = SubResource("CapsuleShape3D_60e7r")
 sprite_frames = SubResource("SpriteFrames_qquox")
 animation = &"charged_attack"
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378921, 0)
+shape = SubResource("CapsuleShape3D_60e7r")
+
 [connection signal="animation_finished" from="AnimatedSprite3D" to="." method="OnAnimatedSprite3DAnimationFinished"]
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

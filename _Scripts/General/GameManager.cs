@@ -20,7 +20,7 @@ public partial class GameManager : Node
 	public override void _Ready()
 	{
 		Instancia = this;
-		oxigeno = 18;
+		oxigeno = 60;
 		if (nivel != 0) {
 			Timer timer = GetNode<Timer>("OxigenTimer");
 			timer.Start();

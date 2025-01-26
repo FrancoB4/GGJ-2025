@@ -109,4 +109,16 @@ public partial class Movement : CharacterBody3D
 		}
 		
 	}
+
+    public void OnBodyEntered(Node body) {
+        GD.Print("intento de contrataque", body.Name);
+        if (isAttack && body.Name == "Orca") {
+            GD.Print("Contrataque");
+            try {
+                ((Orca)body).RecibirDaño(10);
+            }
+            catch (Exception e) {GD.PrintErr(e.ToString());}
+            
+        }
+    }
 }

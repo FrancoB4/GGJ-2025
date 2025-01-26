@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=16 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
 [ext_resource type="ArrayMesh" uid="uid://15qeb2q4o76y" path="res://Props/Entorno/Base.obj" id="3_bqbg7"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cqq3r2fnhyfi8" path="res://Escenas/Interfaz/InterfazIngame.tscn" id="4_gpu1u"]
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Prefabs/Player.tscn" id="4_ktj5m"]
 [ext_resource type="PackedScene" uid="uid://dlfcegky6fyke" path="res://Escenas/Enemigos/Orca.tscn" id="6_nh1x4"]
-[ext_resource type="Texture2D" uid="uid://ba34e7b68uey7" path="res://Props/Entorno/Caja/Baked_Crate_Texture.png" id="7_7x20o"]
-[ext_resource type="ArrayMesh" uid="uid://dopoypxhnakhd" path="res://Props/Entorno/Caja/Crate.obj" id="8_l1lqa"]
+[ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
+[ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/crate.tscn" id="9_tsml1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cm8j"]
 albedo_texture = ExtResource("3_r57dh")
@@ -22,14 +22,11 @@ background_mode = 1
 [sub_resource type="BoxShape3D" id="BoxShape3D_jj22n"]
 size = Vector3(123.301, 36.1711, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0nbta"]
-size = Vector3(36.0371, 32.1116, 1)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_bkuhm"]
 size = Vector3(30.0234, 2024.35, 0.001)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8yyr"]
-albedo_texture = ExtResource("7_7x20o")
+[sub_resource type="BoxShape3D" id="BoxShape3D_0nbta"]
+size = Vector3(36.0371, 32.1116, 1)
 
 [node name="Nivel" type="Node3D"]
 script = ExtResource("1_p6p35")
@@ -87,13 +84,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.0214)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0045, 17.5855, 0)
 shape = SubResource("BoxShape3D_jj22n")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Limites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.0214)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites/StaticBody3D4"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93.5563, 20.7643, -12.4588)
-shape = SubResource("BoxShape3D_0nbta")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Limites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67044, 0, 15.0214)
@@ -154,41 +144,140 @@ transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0
 
 [node name="Crates" type="Node3D" parent="."]
 
-[node name="Crate" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.911665, -0.295559, -0.2855, -0.26832, 0.954357, -0.131177, 0.31124, -0.0429841, -0.949359, 13.6806, 5.41833, -9.73069)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="Crate" parent="Crates" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.306725, -0.344209, 0.887378, 0.949478, 0.175705, -0.260035, -0.0664107, 0.922306, 0.380712, 43.5907, 8.51199, 10.1153)
+skeleton = NodePath("../../..")
 
-[node name="Crate2" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.774434, -0.621669, 0.117388, -0.609248, 0.782835, 0.12644, -0.170499, 0.0264007, -0.985004, 45.5127, 8.09564, 11.9795)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="Crate2" parent="Crates" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.985085, -0.172067, 0, 0.172067, 0.985085, 0, 0, 0, 1, 22.9894, 8.31166, 12.0872)
+skeleton = NodePath("../../..")
 
-[node name="Crate3" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.973404, 0.150726, 0.172531, -0.16666, 0.0508474, -0.984702, -0.157192, -0.987267, -0.0243751, 62.7377, 14.8662, -3.31221)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="Crate3" parent="Crates" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.864082, -0.503352, 0, 0.503352, 0.864082, 0, 0, 0, 1, 11.2106, 4.2354, -9.69523)
+skeleton = NodePath("../../..")
 
-[node name="Crate4" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 78.3998, 14.7694, 11.9795)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="Crate4" parent="Crates" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.946119, -0.323818, 0, 0.323818, 0.946119, 0, 0, 0, 1, -7.86373, 0.269434, 12.8857)
+skeleton = NodePath("../../..")
 
-[node name="Crate6" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.973404, 0.150726, 0.172531, 0.15302, 0.988223, 0, -0.170499, 0.0264007, -0.985004, 23.6735, 8.09564, 11.9795)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="Base2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 115.934, 18.7596, 0.0149131)
+material_override = SubResource("StandardMaterial3D_6cm8j")
+mesh = ExtResource("3_bqbg7")
 
-[node name="Crate7" type="MeshInstance3D" parent="Crates"]
-transform = Transform3D(-0.567643, 0.81447, 0.120086, 0.805426, 0.579605, -0.12388, -0.170499, 0.0264007, -0.985004, -10.1325, 0.894503, 11.9795)
-material_override = SubResource("StandardMaterial3D_y8yyr")
-mesh = ExtResource("8_l1lqa")
-skeleton = NodePath("../..")
+[node name="StaticBody3D" type="StaticBody3D" parent="Base2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Base2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_sxsa8")
+
+[node name="Limites2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.934, 18.7596, 0.0149131)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Limites2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0045, 17.5855, 0)
+shape = SubResource("BoxShape3D_jj22n")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Limites2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.0214)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites2/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.0045, 17.5855, 0)
+shape = SubResource("BoxShape3D_jj22n")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Limites2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.0214)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limites2/StaticBody3D4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93.5563, 20.7643, -12.4588)
+shape = SubResource("BoxShape3D_0nbta")
+
+[node name="Burbujas2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.934, 18.7596, 0.0149131)
+
+[node name="Burbuja" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59209, -6.78518)
+
+[node name="Burbuja2" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59209, 8.19814)
+
+[node name="Burbuja3" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.914642, 0.397652, 0.0728177, -0.404264, 0.899682, 0.164749, 0, -0.180124, 0.983644, 23.2173, 8.18639, 8.19814)
+
+[node name="Burbuja4" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.837709, 0.537184, 0.0983689, -0.546117, 0.824008, 0.150892, 6.024e-09, -0.180124, 0.983644, 23.0742, 8.18639, -1.59941)
+
+[node name="Burbuja5" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.993473, -0.112205, -0.0205468, 0.11166, 0.993407, -0.0259669, 0.0233249, 0.0235032, 0.999452, 32.1706, 7.90165, -1.59941)
+
+[node name="Burbuja6" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
+
+[node name="Burbuja7" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 47.8918, 14.8314, -5.54643)
+
+[node name="Burbuja8" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 51.5456, 8.87826, 10.4382)
+
+[node name="Burbuja9" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
+
+[node name="Burbuja10" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 74.0379, 14.6352, 10.1257)
+
+[node name="Burbuja11" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 63.6871, 11.9332, 4.42256)
+
+[node name="Burbuja12" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 89.4411, 21.7084, 12.1661)
+
+[node name="Burbuja13" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 81.8313, 16.4794, -6.72363)
+
+[node name="Burbuja14" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 90.8171, 20.7905, 3.90701)
+
+[node name="Burbuja15" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 94.8114, 20.7125, -6.72363)
+
+[node name="Burbuja16" parent="Burbujas2" instance=ExtResource("3_g6g08")]
+transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 64.1058, 15.8751, -10.0778)
+
+[node name="Crates2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.934, 18.7596, 0.0149131)
+
+[node name="Crate" parent="Crates2" instance=ExtResource("9_tsml1")]
+
+[node name="Crate5" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.716789, -0.69729, 0, 0.617246, 0.634507, -0.465197, 0.324378, 0.333448, 0.885207, -36.6738, -3.54073, 12.6545)
+
+[node name="Crate8" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.851049, -0.506894, -0.137017, 0.428086, 0.820903, -0.377968, 0.304068, 0.263015, 0.915623, -53.4147, -4.70518, -4.18394)
+skeleton = NodePath("../../..")
+
+[node name="Crate3" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.550845, -0.454523, 0.699985, 0.834608, 0.299987, -0.461993, 0, 0.838699, 0.544595, 78.0136, 15.792, 8.27903)
+skeleton = NodePath("../../..")
+
+[node name="Crate4" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.84296, 0.292979, -0.4512, -0.537801, 0.437509, -0.720663, -0.0137353, 0.850146, 0.526367, 62.3195, 14.6979, -6.09459)
+skeleton = NodePath("../../..")
+
+[node name="Crate7" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.914924, -0.343305, 0.212261, 0.403625, 0.778193, -0.481147, 0, 0.525887, 0.850554, 4.1771, 1.14214, 3.4314)
+skeleton = NodePath("../../..")
+
+[node name="Crate9" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.128725, 0.278193, 0.951861, 0.435926, 0.846262, -0.306283, -0.890729, 0.454367, -0.0123367, -10.5709, 1.83188, -4.94955)
+skeleton = NodePath("../../..")
+
+[node name="Crate10" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(1, 0, 0, 0, 0.832612, -0.553857, 0, 0.553857, 0.832612, 22.971, 7.61092, 13.2253)
+
+[node name="Crate11" parent="Crates2" instance=ExtResource("8_k3c6y")]
+transform = Transform3D(0.906838, -0.350929, 0.233439, 0.421479, 0.755044, -0.502258, 0, 0.553857, 0.832612, 46.083, 10.3732, -0.734788)
 
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
