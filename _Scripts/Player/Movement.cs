@@ -45,9 +45,7 @@ public partial class Movement : CharacterBody3D
 			velocity.Y = FloatVelocity;
 		}
 		
-		if (IsOnFloor() || !IsOnFloor()){
-			velocity.Y += AscendRate * (float)delta;
-		}
+		velocity.Y += AscendRate * (float)delta;
 		
 		
 		
@@ -70,8 +68,8 @@ public partial class Movement : CharacterBody3D
 		}
 		else
 		{
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed * (float)delta);
-			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed * (float)delta);
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed * 10 * (float)delta);
+			velocity.Z = Mathf.MoveToward(Velocity.Z, 0, Speed * 10 * (float)delta);
 		}
 		
 		
