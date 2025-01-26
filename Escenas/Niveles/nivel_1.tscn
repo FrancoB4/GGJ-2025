@@ -127,5 +127,10 @@ transform = Transform3D(0.993473, -0.112205, -0.0205468, 0.11166, 0.993407, -0.0
 [node name="Burbuja6" parent="Burbujas" instance=ExtResource("3_g6g08")]
 transform = Transform3D(0.840605, -0.541605, -0.00688143, 0.494308, 0.772267, -0.399078, 0.221457, 0.332065, 0.916891, 41.8768, 8.87826, 4.42256)
 
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.0417, 19.5405, 10.5722)
+omni_range = 19.9574
+omni_attenuation = -0.379
+
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
