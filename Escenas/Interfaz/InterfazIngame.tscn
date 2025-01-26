@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqq3r2fnhyfi8"]
+[gd_scene load_steps=10 format=3 uid="uid://cqq3r2fnhyfi8"]
 
 [ext_resource type="Script" path="res://_Scripts/Interfaz/InterfazIngame.cs" id="1_ovhbo"]
 [ext_resource type="Shader" path="res://Escenas/Interfaz/InterfazIngame.gdshader" id="2_6wu46"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://_Scripts/Interfaz/FiltroPocoOxigeno.cs" id="3_pg8gu"]
 [ext_resource type="Material" uid="uid://dw8busfiv6xn6" path="res://Materials/Filtro_material.tres" id="4_mk8tk"]
 [ext_resource type="Theme" uid="uid://5u0gwedd3kot" path="res://Theme/TemaInterfaz.tres" id="5_05dv2"]
-[ext_resource type="Material" uid="uid://b41uah2n3u3j6" path="res://Materials/Blur.tres" id="5_5e4mn"]
 [ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="5_8n826"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bisuu"]
@@ -50,7 +49,7 @@ show_percentage = false
 script = ExtResource("2_pkglv")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
-material = ExtResource("5_5e4mn")
+material = ExtResource("4_mk8tk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

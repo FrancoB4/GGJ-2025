@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://ktnui7hb7hiy"]
+
+[ext_resource type="Shader" path="res://Materials/Filter-menu.gdshader" id="1_cpgqg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbjf1"]
+noise_type = 2
+frequency = 0.0015
+fractal_type = 2
+fractal_gain = 1.0
+fractal_weighted_strength = 0.65
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_wonnv"]
+seamless = true
+seamless_blend_skirt = 0.65
+noise = SubResource("FastNoiseLite_xbjf1")
+
+[resource]
+shader = ExtResource("1_cpgqg")
+shader_parameter/color = Color(0.787908, 0.431823, 0.637801, 1)
+shader_parameter/speed = Vector2(0.03, 0.07)
+shader_parameter/wave_strength = 2.0
+shader_parameter/fast_noise = SubResource("NoiseTexture2D_wonnv")
