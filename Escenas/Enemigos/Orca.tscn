@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://dlfcegky6fyke"]
+[gd_scene load_steps=102 format=3 uid="uid://dlfcegky6fyke"]
 
 [ext_resource type="Script" path="res://_Scripts/Enemigos/Orca.cs" id="1_gwb1t"]
 [ext_resource type="Texture2D" uid="uid://df3ev1kypdvkj" path="res://Animations/Enemies/Attack/Armature_animtion0_00.png" id="2_hbmhe"]
@@ -99,10 +99,6 @@
 [ext_resource type="Texture2D" uid="uid://de6j0i642pxyh" path="res://Animations/Enemies/Swimming/Armature_animtion0_46.png" id="97_p0y5t"]
 [ext_resource type="Texture2D" uid="uid://dshe2f15cq6r4" path="res://Animations/Enemies/Swimming/Armature_animtion0_47.png" id="98_yrocu"]
 [ext_resource type="Texture2D" uid="uid://c8lghlxfy30ii" path="res://Animations/Enemies/Swimming/Armature_animtion0_48.png" id="99_r3fkl"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qd67p"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dfe8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_00ujc"]
 animations = [{
@@ -411,26 +407,25 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_irrr4"]
+size = Vector3(2.62453, 10.7117, 1)
+
 [node name="Orca" type="Node3D"]
 script = ExtResource("1_gwb1t")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_qd67p")
-skeleton = NodePath("")
 
 [node name="CooldownAtaque" type="Timer" parent="."]
 wait_time = 2.25
 one_shot = true
-
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("CapsuleShape3D_7dfe8")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_00ujc")
 animation = &"attack"
 frame_progress = 0.88623
 
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(0.688481, 0.725254, 0, -0.725254, 0.688481, 0, 0, 0, 1, -0.743189, -1.29373, 0)
+shape = SubResource("BoxShape3D_irrr4")
+
 [connection signal="timeout" from="CooldownAtaque" to="." method="OnCooldownAtaqueTimeout"]
-[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

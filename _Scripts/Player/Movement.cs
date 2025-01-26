@@ -3,7 +3,8 @@ using System;
 
 public partial class Movement : CharacterBody3D
 {
-	public const float Speed = 5.0f; // Velocidad de movimiento
+    [Export]
+	public float Speed = 5.0f; // Velocidad de movimiento
 	public const float JumpVelocity = 5.0f; // Velocidad del salto
 	public const float FloatVelocity = 0.0f; // Velocidad para mantener la altura
 	public const float DescendVelocity = -5.0f; // Velocidad para descender

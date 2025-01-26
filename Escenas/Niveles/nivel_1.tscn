@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=12 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
 [ext_resource type="ArrayMesh" uid="uid://15qeb2q4o76y" path="res://Props/Entorno/Base.obj" id="3_bqbg7"]
 [ext_resource type="Texture2D" uid="uid://dvuag3y16eu5s" path="res://Props/Entorno/base.png" id="3_r57dh"]
 [ext_resource type="PackedScene" uid="uid://cqq3r2fnhyfi8" path="res://Escenas/Interfaz/InterfazIngame.tscn" id="4_gpu1u"]
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Prefabs/Player.tscn" id="4_ktj5m"]
+[ext_resource type="PackedScene" uid="uid://dlfcegky6fyke" path="res://Escenas/Enemigos/Orca.tscn" id="6_nh1x4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cm8j"]
 albedo_texture = ExtResource("3_r57dh")
@@ -25,6 +26,12 @@ size = Vector3(30.0234, 2024.35, 0.001)
 script = ExtResource("1_p6p35")
 nivel = 1
 
+[node name="Orca" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_nh1x4")]
+transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, -1.68934, 6.54585, -0.716679)
+speed = 10.0
+"daño" = 15
+player = NodePath("../Player")
+
 [node name="OxigenTimer" type="Timer" parent="."]
 
 [node name="InterfazIngame" parent="." instance=ExtResource("4_gpu1u")]
@@ -40,7 +47,12 @@ mesh = ExtResource("3_bqbg7")
 shape = SubResource("ConcavePolygonShape3D_sxsa8")
 
 [node name="Player" parent="." instance=ExtResource("4_ktj5m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06761, 5.39352, 1.95936)
+transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 14.3815, 11.3696, 1.95936)
+Speed = 10.0
+
+[node name="Camera3D2" type="Camera3D" parent="Player"]
+transform = Transform3D(0.811115, 0, -0.584887, 0.242967, 0.909635, 0.336943, 0.532034, -0.415408, 0.737819, -1.7104, 2.65112, 6.47101)
+fov = 84.375
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
