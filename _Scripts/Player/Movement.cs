@@ -74,29 +74,19 @@ public partial class Movement : CharacterBody3D
 	
 	public void SelectAnimation()
 	{
-		if (waitAnimation)
+		if (Velocity.X == 0)
 		{
-			if (Velocity.X == 0)
-			{
-				_animatedSprite3D.Play("idle");
-			}
-			else if (Velocity.X < 0)
-			{
-				_animatedSprite3D.FlipH = true;
-				_animatedSprite3D.Play("swimming");
-			}
-			else if (Velocity.X > 0)
-			{
-				_animatedSprite3D.FlipH = false;
-				_animatedSprite3D.Play("swimming");
-			}
-			
-			
+			_animatedSprite3D.Play("idle");
 		}
-	}
-	
-	private void OnAnimatedSprite3DAnimationFinished()
-	{
-		waitAnimation = true;
+		else if (Velocity.X < 0)
+		{
+			_animatedSprite3D.FlipH = true;
+			_animatedSprite3D.Play("swimming");
+		}
+		else if (Velocity.X > 0)
+		{
+			_animatedSprite3D.FlipH = false;
+			_animatedSprite3D.Play("swimming");
+		}
 	}
 }
