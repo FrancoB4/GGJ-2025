@@ -40,7 +40,7 @@ mesh = ExtResource("3_bqbg7")
 shape = SubResource("ConcavePolygonShape3D_sxsa8")
 
 [node name="Player" parent="." instance=ExtResource("4_ktj5m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1464, 5.39352, 1.95936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06761, 5.39352, 1.95936)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
@@ -64,10 +64,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 93.556
 shape = SubResource("BoxShape3D_0nbta")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.0214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.67044, 0, 15.0214)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.6439, 1009.24, -10.5194)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.37873, 1009.24, -10.5194)
 shape = SubResource("BoxShape3D_bkuhm")
 
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]

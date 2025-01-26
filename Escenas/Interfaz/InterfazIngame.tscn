@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqq3r2fnhyfi8"]
+[gd_scene load_steps=11 format=3 uid="uid://cqq3r2fnhyfi8"]
 
 [ext_resource type="Script" path="res://_Scripts/Interfaz/InterfazIngame.cs" id="1_ovhbo"]
 [ext_resource type="Shader" path="res://Escenas/Interfaz/InterfazIngame.gdshader" id="2_6wu46"]
 [ext_resource type="Script" path="res://_Scripts/Interfaz/ProgressBar.cs" id="2_pkglv"]
 [ext_resource type="Script" path="res://_Scripts/Interfaz/FiltroPocoOxigeno.cs" id="3_pg8gu"]
+[ext_resource type="Material" uid="uid://dw8busfiv6xn6" path="res://Materials/Filtro_material.tres" id="4_mk8tk"]
 [ext_resource type="Theme" uid="uid://5u0gwedd3kot" path="res://Theme/TemaInterfaz.tres" id="5_05dv2"]
+[ext_resource type="Material" uid="uid://b41uah2n3u3j6" path="res://Materials/Blur.tres" id="5_5e4mn"]
+[ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="5_8n826"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bisuu"]
 shader = ExtResource("2_6wu46")
@@ -38,13 +41,33 @@ script = ExtResource("3_pg8gu")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 450.0
-offset_bottom = 58.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 465.0
+offset_bottom = 73.0
 step = 0.001
 show_percentage = false
 script = ExtResource("2_pkglv")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = ExtResource("5_5e4mn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8n826")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("4_mk8tk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_8n826")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
@@ -55,9 +78,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.0
-offset_top = -68.5
+offset_top = -76.5
 offset_right = 163.0
-offset_bottom = 68.5
+offset_bottom = 76.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -76,14 +99,6 @@ text = "Reintentar"
 layout_mode = 2
 theme = ExtResource("5_05dv2")
 text = "Menú principal"
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [connection signal="ActivarFiltro" from="." to="ColorRect" method="Activar"]
 [connection signal="ActivarFiltroGameOverSignal" from="." to="ColorRect" method="FiltroGameOver"]
