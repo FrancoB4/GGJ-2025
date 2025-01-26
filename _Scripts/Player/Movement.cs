@@ -112,7 +112,6 @@ public partial class Movement : CharacterBody3D
 
     public void OnAreaEntered(Node body) {
 		if (isAttack && body.Name == "OrcaArea") {
-			GD.Print("Contrataque");
 			try {
 				body.GetParent<Orca>().RecibirDaño(10);
 			}

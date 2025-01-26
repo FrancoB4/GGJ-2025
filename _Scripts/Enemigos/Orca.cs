@@ -71,13 +71,16 @@ public partial class Orca : Node3D
 			causoDaño = true;
 			enCooldownAtaque = true;
             jugadorSalio = false;
-			cooldownAtaque.Start();
 		}
+        else if (body.Name == "Player") {
+            cooldownAtaque.Stop();
+        }
 	}
 
     private void OnBodyExited(Node body) {
 		if (body.Name == "Player") {
 			jugadorSalio = true;
+            cooldownAtaque.Start();
 		}
 	}
 
