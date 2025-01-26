@@ -36,9 +36,9 @@ script = ExtResource("1_p6p35")
 nivel = 1
 
 [node name="Orca" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_nh1x4")]
-transform = Transform3D(0.28, 0, 0, 0, 0.28, 0, 0, 0, 0.28, -1.68934, 6.54585, -0.716679)
-speed = 10.0
-"daño" = 15
+transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 7.3577, 16.142, -0.438412)
+speed = 5.0
+"daño" = 10
 player = NodePath("../Player")
 
 [node name="OxigenTimer" type="Timer" parent="."]

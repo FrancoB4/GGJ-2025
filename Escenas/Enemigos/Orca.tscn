@@ -100,6 +100,10 @@
 [ext_resource type="Texture2D" uid="uid://dshe2f15cq6r4" path="res://Animations/Enemies/Swimming/Armature_animtion0_47.png" id="98_yrocu"]
 [ext_resource type="Texture2D" uid="uid://c8lghlxfy30ii" path="res://Animations/Enemies/Swimming/Armature_animtion0_48.png" id="99_r3fkl"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pfyll"]
+radius = 1.70691
+height = 9.48388
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_00ujc"]
 animations = [{
 "frames": [{
@@ -407,9 +411,6 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_irrr4"]
-size = Vector3(2.62453, 10.7117, 1)
-
 [node name="Orca" type="Node3D"]
 script = ExtResource("1_gwb1t")
 
@@ -417,15 +418,22 @@ script = ExtResource("1_gwb1t")
 wait_time = 2.25
 one_shot = true
 
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.447946, 0.89406, 0, -0.89406, 0.447946, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_pfyll")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.447946, 0.89406, 0, -0.89406, 0.447946, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_pfyll")
+
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_00ujc")
 animation = &"attack"
 frame_progress = 0.88623
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(0.688481, 0.725254, 0, -0.725254, 0.688481, 0, 0, 0, 1, -0.743189, -1.29373, 0)
-shape = SubResource("BoxShape3D_irrr4")
-
 [connection signal="timeout" from="CooldownAtaque" to="." method="OnCooldownAtaqueTimeout"]
+[connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]

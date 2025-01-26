@@ -22,12 +22,21 @@ public partial class Orca : Node3D
 		cooldownAtaque = GetNode<Timer>("CooldownAtaque");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(double delta)
+    public override void _Process(double delta)
+    {
+        if (Position.X > player.Position.X) {
+            GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = true;
+        }
+        else {
+            GetNode<AnimatedSprite3D>("AnimatedSprite3D").FlipH = false;
+        }
+    }
+
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _PhysicsProcess(double delta)
 	{
 		if (!enCooldownAtaque) {
 			if (Position.DistanceTo(player.Position) < 15) {
-				GD.Print(Position.DistanceTo(player.Position));
 				target = player.Position;
 				if (Position.DistanceTo(player.Position) <= 4) {
 					Atacar(player.Position, delta);
@@ -40,18 +49,12 @@ public partial class Orca : Node3D
 		}
 	}
 
-	private float CalcularDistancia(Vector3 otro) {
-		return  MathF.Sqrt( 
-			MathF.Pow(Position.X - otro.X, 2) + MathF.Pow(Position.Y - otro.Y, 2)
-		);
-	}
-
 	private void Acercarse(Vector3 target, double delta) {
 		Position += Position.DirectionTo(target) * speed * (float) delta;
 	}
 
 	private void Atacar(Vector3 target, double delta) {
-		Position += Position.DirectionTo(target) * speed * 6 * (float) delta;
+		Position += Position.DirectionTo(target) * speed * 3 * (float) delta;
 	}
 
 	private void OnCooldownAtaqueTimeout() {
@@ -61,7 +64,6 @@ public partial class Orca : Node3D
 	}
 
 	private void OnBodyEntered(Node body) {
-		GD.Print("Colisioon");
 		if (body.Name == "Player" && !causoDaño) {
 			GameManager.Instancia.QuitarOxigeno(daño);
 			causoDaño = true;
