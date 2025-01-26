@@ -46,7 +46,7 @@ step = 0.001
 show_percentage = false
 script = ExtResource("2_pkglv")
 
-[node name="TextoGameOver" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -55,33 +55,40 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -163.0
-offset_top = -41.5
+offset_top = -68.5
 offset_right = 163.0
-offset_bottom = 41.5
+offset_bottom = 68.5
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="TextoGameOver" type="Label" parent="VBoxContainer"]
+layout_mode = 2
 text = "Game Over"
 label_settings = SubResource("LabelSettings_jn8t3")
 
-[node name="BotonReintentar" type="Button" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.5
-offset_top = 56.0
-offset_right = 45.5
-offset_bottom = 87.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="BotonReintentar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 theme = ExtResource("5_05dv2")
 text = "Reintentar"
+
+[node name="BotonMenu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_05dv2")
+text = "Menú principal"
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [connection signal="ActivarFiltro" from="." to="ColorRect" method="Activar"]
 [connection signal="ActivarFiltroGameOverSignal" from="." to="ColorRect" method="FiltroGameOver"]
 [connection signal="DesactivarFiltro" from="." to="ColorRect" method="Desactivar"]
-[connection signal="pressed" from="BotonReintentar" to="." method="RecargarEscena"]
-[connection signal="pressed" from="BotonReintentar" to="ColorRect" method="RecargarEscena"]
+[connection signal="pressed" from="VBoxContainer/BotonReintentar" to="." method="RecargarEscena"]
+[connection signal="pressed" from="VBoxContainer/BotonReintentar" to="ColorRect" method="RecargarEscena"]
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="." method="ToMainMenu"]
+[connection signal="pressed" from="VBoxContainer/BotonMenu" to="ColorRect" method="RecargarEscena"]

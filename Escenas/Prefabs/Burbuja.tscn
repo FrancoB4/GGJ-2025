@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://djkyeyyp00fpe"]
 
-[ext_resource type="Script" path="res://_Scripts/Burbuja/Burbuja.cs" id="2_je25h"]
+[ext_resource type="Script" path="res://_Scripts/Burbuja/Burbuja.cs" id="1_p442j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hjtwh"]
 height = 9.24431
@@ -28,7 +28,7 @@ radius = 0.04
 height = 0.08
 
 [node name="Burbuja" type="Node3D"]
-script = ExtResource("2_je25h")
+script = ExtResource("1_p442j")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.347435, 0)

@@ -10,6 +10,7 @@ public partial class InterfazIngame : Control
     [Signal]
     public delegate void ActivarFiltroGameOverSignalEventHandler();
     private ProgressBar progressBar;
+    private VBoxContainer vBoxContainer;
     private ColorRect colorRect;
     private Label textoGameOver;
     private Button botonReintentar;
@@ -18,9 +19,10 @@ public partial class InterfazIngame : Control
     public override void _Ready()
     {
         progressBar = GetNode<ProgressBar>("ProgressBar");
-        colorRect = GetNode<ColorRect>("ColorRect");
-        textoGameOver = GetNode<Label>("TextoGameOver");
-        botonReintentar = GetNode<Button>("BotonReintentar");
+        vBoxContainer = GetNode<VBoxContainer>("VBoxContainer");
+        // colorRect = GetNode<ColorRect>("ColorRect");
+        // textoGameOver = GetNode<Label>("TextoGameOver");
+        // botonReintentar = GetNode<Button>("BotonReintentar");
     }
 
     public void ActualizarValor(int value) {
@@ -48,11 +50,16 @@ public partial class InterfazIngame : Control
     private void ActivarFiltroGameOver() {
         EmitSignal(SignalName.ActivarFiltroGameOverSignal);
         progressBar.Visible = false;
-        textoGameOver.Visible = true;
-        botonReintentar.Visible = true;
+        // textoGameOver.Visible = true;
+        // botonReintentar.Visible = true;
+        vBoxContainer.Visible = true;
     }
 
     private void RecargarEscena() {
         GetTree().ChangeSceneToFile("res://Escenas/Niveles/PantallaDeCarga.tscn");
+    }
+
+    private void ToMainMenu() {
+        GetTree().ChangeSceneToFile("res://Escenas/Niveles/main_Menu.tscn");
     }
 }
