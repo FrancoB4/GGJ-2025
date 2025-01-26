@@ -332,6 +332,5 @@ script = ExtResource("9_ldtql")
 [connection signal="pressed" from="VBoxContainer2/Start_Button" to="TabContainer" method="ToggleHabilitar"]
 [connection signal="pressed" from="VBoxContainer2/Options_button" to="." method="OnOptionsButtonPressed"]
 [connection signal="pressed" from="VBoxContainer2/Exit_button" to="." method="OnExitButtonPressed"]
-[connection signal="ButtonPressed" from="TabContainer/Ruinas Profundas/VBoxContainer/HBoxContainer/Button" to="." method="OnNivelButtonPressed"]
 [connection signal="pressed" from="TabContainer/Ruinas Profundas/VBoxContainer/HBoxContainer/Button" to="TabContainer/Ruinas Profundas/VBoxContainer/HBoxContainer/Button" method="OnPressed"]
 [connection signal="pressed" from="TabContainer/Ruinas Profundas/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
