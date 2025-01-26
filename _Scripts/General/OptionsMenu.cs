@@ -18,6 +18,6 @@ public partial class OptionsMenu : Control
 	{
 		// Salir del juego
 		GD.Print("Cerrando las opciones...");
-		GetTree().ChangeSceneToFile("res://Scenes/Main_Menu.tscn");
+		GetTree().ChangeSceneToFile("res://Escenas/Niveles/Main_Menu.tscn");
 	}
 }
