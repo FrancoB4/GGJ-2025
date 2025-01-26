@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjmcbsgnsk2jh"]
 
 [ext_resource type="Script" path="res://addons/tattomoosa.spinner/spinner.gd" id="1_ldjl6"]
-[ext_resource type="Script" path="res://Escenas/Niveles/PantallaDeCarga.cs" id="1_nbund"]
+[ext_resource type="Script" path="res://_Scripts/Interfaz/PantallaDeCarga.cs" id="1_nbund"]
 
 [sub_resource type="Theme" id="Theme_2njha"]
 
@@ -45,6 +45,8 @@ horizontal_alignment = 1
 autowrap_mode = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

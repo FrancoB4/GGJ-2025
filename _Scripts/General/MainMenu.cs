@@ -15,7 +15,6 @@ public partial class MainMenu : Control
 		_exitButton = GetNode<Button>("MarginContainer/HBoxContainer/VBoxContainer/Exit_button");
 		
 		// Conectar señales de los botones
-		_startButton.Pressed += OnStartButtonPressed;
 		_optionsButton.Pressed += OnOptionsButtonPressed;
 		_exitButton.Pressed += OnExitButtonPressed;
 	}
@@ -41,4 +40,8 @@ public partial class MainMenu : Control
 		GD.Print("Saliendo del juego...");
 		GetTree().Quit();
 	}
+
+    private void OnNivelButtonPressed(int nivel) {
+        GameManager.Instancia.CargarNivel(nivel);
+    }
 }
