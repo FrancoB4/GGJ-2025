@@ -21,7 +21,6 @@ public partial class GameManager : Node
 	{
 		Instancia = this;
 		oxigeno = 18;
-		GD.Print(nivel);
 		if (nivel != 0) {
 			Timer timer = GetNode<Timer>("OxigenTimer");
 			timer.Start();
@@ -54,7 +53,6 @@ public partial class GameManager : Node
 			pocoOxigeno = false;
 		}
 		interfazIngame.ActualizarValor(oxigeno);
-		GD.Print(oxigeno);
 	}
 
 	public void QuitarOxigeno(int cant) {
@@ -63,11 +61,10 @@ public partial class GameManager : Node
 			pocoOxigeno = true;
 		}
 		else if (oxigeno <= 0) {
-			GetNode<Timer>("OxigenTimer").QueueFree();
+			GetNode<Timer>("OxigenTimer").Stop();
 			GameOver();
 		}
 		interfazIngame.ActualizarValor(oxigeno);
-		GD.Print(oxigeno);
 	}
 
 	public void Reiniciar() {
