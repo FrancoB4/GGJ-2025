@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dog5g0l1ikfc0"]
+
+[ext_resource type="Texture2D" uid="uid://c85f5nbrvrlgv" path="res://Props/Entorno/Bake_Arch_Texture.png" id="1_cb3mt"]
+[ext_resource type="ArrayMesh" uid="uid://dvjqybcmhu5db" path="res://Props/Entorno/Arch (3).obj" id="2_k242f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_or63q"]
+size = Vector3(2.52155, 8.9512, 9.08441)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_53qb2"]
+albedo_texture = ExtResource("1_cb3mt")
+
+[node name="Arch" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290131, 3.9756, -0.0608826)
+shape = SubResource("BoxShape3D_or63q")
+
+[node name="Arch(3)" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_53qb2")
+mesh = ExtResource("2_k242f")
+skeleton = NodePath("../StaticBody3D")

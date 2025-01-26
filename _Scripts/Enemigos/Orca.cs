@@ -9,7 +9,7 @@ public partial class Orca : Node3D
 	public int daño;
 	[Export]
 	public CharacterBody3D player;
-    private int vida = 20;
+	private int vida = 20;
 	private Vector3 target;
 	private Timer cooldownAtaque;
 	private bool enCooldownAtaque = false;
@@ -73,10 +73,10 @@ public partial class Orca : Node3D
 		}
 	}
 
-    public void RecibirDaño(int cantidad) {
-        vida -= daño;
-        if (vida <= 0) {
-            QueueFree();
-        }
-    }
+	public void RecibirDaño(int cantidad) {
+		vida -= daño;
+		if (vida <= 0) {
+			QueueFree();
+		}
+	}
 }

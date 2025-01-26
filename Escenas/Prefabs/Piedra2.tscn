@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfh2jf2pw7was"]
+
+[ext_resource type="Texture2D" uid="uid://btldf4immy2a2" path="res://Props/Entorno/Piedra2_Textura.png" id="1_xh13o"]
+[ext_resource type="ArrayMesh" uid="uid://dipbx0at4vqow" path="res://Props/Entorno/Piedra2.obj" id="2_q856h"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_got3x"]
+radius = 0.980004
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15a0c"]
+albedo_texture = ExtResource("1_xh13o")
+
+[node name="Piedra2" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.365982, 0.718274, -0.382318)
+shape = SubResource("SphereShape3D_got3x")
+
+[node name="Piedra2" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_15a0c")
+mesh = ExtResource("2_q856h")
+skeleton = NodePath("../StaticBody3D")

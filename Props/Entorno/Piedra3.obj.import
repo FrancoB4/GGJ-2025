@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yq780cy006r3"
+path="res://.godot/imported/Piedra3.obj-b0da60c7ed9416150f1439c388884a6d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Piedra3.obj-b0da60c7ed9416150f1439c388884a6d.mesh"]
+
+source_file="res://Props/Entorno/Piedra3.obj"
+dest_files=["res://.godot/imported/Piedra3.obj-b0da60c7ed9416150f1439c388884a6d.mesh", "res://.godot/imported/Piedra3.obj-b0da60c7ed9416150f1439c388884a6d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
