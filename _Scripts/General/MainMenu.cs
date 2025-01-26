@@ -41,7 +41,7 @@ public partial class MainMenu : Control
 		GetTree().Quit();
 	}
 
-    private void OnNivelButtonPressed(int nivel) {
-        GameManager.Instancia.CargarNivel(nivel);
-    }
+	private void OnNivelButtonPressed(int nivel) {
+		GameManager.Instancia.CargarNivel(nivel);
+	}
 }

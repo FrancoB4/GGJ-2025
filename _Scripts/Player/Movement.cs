@@ -9,14 +9,18 @@ public partial class Movement : CharacterBody3D
 	public const float DescendVelocity = -5.0f; // Velocidad para descender
 	public const float AscendRate = 1f;
 	
-	 private float attackChargeTime = 0f; // Tiempo de carga del ataque
 	private bool isAttacking = false; // Indica si está atacando
-	private const float maxChargeTime = 3f; // Tiempo máximo de carga para un ataque cargado
-	private const float attackPower = 10f; // Potencia base del ataque
-	private const float maxAttackPower = 20f; // Potencia máxima del ataque cargado
-
+	private const float attackPower = 20f; // Potencia base del ataque
+	public bool waitAnimation = false;
 	
 	private bool isJumping = false; // Verifica si el usuario está saltando
+	
+	private AnimatedSprite3D _animatedSprite3D;
+	
+	public override void _Ready()
+	{
+		_animatedSprite3D = GetNode<AnimatedSprite3D>("AnimatedSprite3D");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -65,7 +69,34 @@ public partial class Movement : CharacterBody3D
 
 		// Usar MoveAndSlide para mover el personaje con la física
 		MoveAndSlide();
-		
-		
+		SelectAnimation();
+	}
+	
+	public void SelectAnimation()
+	{
+		if (waitAnimation)
+		{
+			if (Velocity.X == 0)
+			{
+				_animatedSprite3D.Play("idle");
+			}
+			else if (Velocity.X < 0)
+			{
+				_animatedSprite3D.FlipH = true;
+				_animatedSprite3D.Play("swimming");
+			}
+			else if (Velocity.X > 0)
+			{
+				_animatedSprite3D.FlipH = false;
+				_animatedSprite3D.Play("swimming");
+			}
+			
+			
+		}
+	}
+	
+	private void OnAnimatedSprite3DAnimationFinished()
+	{
+		waitAnimation = true;
 	}
 }
