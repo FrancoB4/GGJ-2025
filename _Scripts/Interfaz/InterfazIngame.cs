@@ -60,6 +60,6 @@ public partial class InterfazIngame : Control
     }
 
     private void ToMainMenu() {
-        GetTree().ChangeSceneToFile("res://Escenas/Niveles/main_Menu.tscn");
+        GetTree().ChangeSceneToFile("res://Escenas/Niveles/Main_Menu.tscn");
     }
 }

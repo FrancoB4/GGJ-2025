@@ -14,7 +14,7 @@ public partial class Orca : Node3D
 	private Timer cooldownAtaque;
 	private bool enCooldownAtaque = false;
 	private bool causoDaño = false;
-    private bool habilitadoAtacar = true;
+    private bool jugadorSalio = true;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -37,7 +37,7 @@ public partial class Orca : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-		if (!enCooldownAtaque && habilitadoAtacar) {
+		if (!enCooldownAtaque && jugadorSalio) {
 			if (Position.DistanceTo(player.Position) < 15) {
 				target = player.Position;
 				if (Position.DistanceTo(player.Position) <= 4) {
@@ -70,14 +70,14 @@ public partial class Orca : Node3D
 			GameManager.Instancia.QuitarOxigeno(daño);
 			causoDaño = true;
 			enCooldownAtaque = true;
-            habilitadoAtacar = false;
+            jugadorSalio = false;
 			cooldownAtaque.Start();
 		}
 	}
 
     private void OnBodyExited(Node body) {
 		if (body.Name == "Player") {
-			habilitadoAtacar = true;
+			jugadorSalio = true;
 		}
 	}
 

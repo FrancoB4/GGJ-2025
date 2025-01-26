@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://va1uhuexatdy"]
+[gd_scene load_steps=5 format=3 uid="uid://dawl78m0kuh4c"]
 
 [ext_resource type="Texture2D" uid="uid://ba34e7b68uey7" path="res://Props/Entorno/Caja/Baked_Crate_Texture.png" id="1_tv3e8"]
 [ext_resource type="ArrayMesh" uid="uid://dopoypxhnakhd" path="res://Props/Entorno/Caja/Crate.obj" id="2_331bq"]
