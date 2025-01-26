@@ -358,7 +358,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_enk1r")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 30.0
 }, {
@@ -510,7 +510,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("101_eqse4")
 }],
-"loop": true,
+"loop": false,
 "name": &"charge",
 "speed": 25.0
 }, {
@@ -809,7 +809,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("52_enk1r")
 }],
-"loop": true,
+"loop": false,
 "name": &"charged_attack",
 "speed": 90.0
 }, {
