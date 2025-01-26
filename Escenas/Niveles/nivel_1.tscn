@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=21 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
 [ext_resource type="ArrayMesh" uid="uid://15qeb2q4o76y" path="res://Props/Entorno/Base.obj" id="3_bqbg7"]
@@ -7,8 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cqq3r2fnhyfi8" path="res://Escenas/Interfaz/InterfazIngame.tscn" id="4_gpu1u"]
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Prefabs/Player.tscn" id="4_ktj5m"]
 [ext_resource type="PackedScene" uid="uid://dlfcegky6fyke" path="res://Escenas/Enemigos/Orca.tscn" id="6_nh1x4"]
-[ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
-[ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/crate.tscn" id="9_tsml1"]
+[ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
+[ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/crate.tscn" id="9_tsml1"]
+[ext_resource type="PackedScene" uid="uid://c16jni2tyv1ld" path="res://Escenas/Prefabs/Barril.tscn" id="10_h7xwt"]
+[ext_resource type="PackedScene" uid="uid://6u848xxagq64" path="res://Escenas/Prefabs/Piedra.tscn" id="11_wr8cs"]
+[ext_resource type="PackedScene" uid="uid://bfh2jf2pw7was" path="res://Escenas/Prefabs/Piedra2.tscn" id="12_pdln8"]
+[ext_resource type="PackedScene" uid="uid://cp1yex61gasfn" path="res://Escenas/Prefabs/Piedra3.tscn" id="13_moxnt"]
+[ext_resource type="PackedScene" uid="uid://dog5g0l1ikfc0" path="res://Escenas/Prefabs/Arch.tscn" id="14_j3uld"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cm8j"]
 albedo_texture = ExtResource("3_r57dh")
@@ -278,6 +283,162 @@ transform = Transform3D(1, 0, 0, 0, 0.832612, -0.553857, 0, 0.553857, 0.832612, 
 
 [node name="Crate11" parent="Crates2" instance=ExtResource("8_k3c6y")]
 transform = Transform3D(0.906838, -0.350929, 0.233439, 0.421479, 0.755044, -0.502258, 0, 0.553857, 0.832612, 46.083, 10.3732, -0.734788)
+
+[node name="Barriles" type="Node3D" parent="."]
+
+[node name="Barril" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(0.886236, 0.463234, 0, -0.463234, 0.886236, 0, 0, 0, 1, -6.54241, 0.922655, 8.56712)
+
+[node name="Barril2" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6049, 5.7089, 14.3233)
+
+[node name="Barril3" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(0.919018, -0.394215, 0, 0.394215, 0.919018, 0, 0, 0, 1, 27.1184, 9.82045, -10.0684)
+
+[node name="Barril4" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.846, 8.23409, 0)
+
+[node name="Barril5" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 0.927589, -0.373603, 0, 0.373603, 0.927589, 132.372, 24.4844, 14.0428)
+
+[node name="Barril6" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.2978, 14.5408, -11.0329)
+
+[node name="Barril7" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(0.903941, -0.427658, 0, 0.427658, 0.903941, 0, 0, 0, 1, 131.554, 24.8994, 0)
+
+[node name="Barril8" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(0.965245, 0.261347, 0, -0.25317, 0.935046, 0.248183, 0.0648618, -0.239557, 0.968713, 92.5737, 21.5741, -11.5914)
+
+[node name="Barril9" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 104.058, 20.7261, 10.3378)
+
+[node name="Barril10" parent="Barriles" instance=ExtResource("10_h7xwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5737, 21.0818, 0)
+
+[node name="Piedras" type="Node3D" parent="."]
+
+[node name="Piedra" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(0.994714, -0.102688, 0, 0.102688, 0.994714, 0, 0, 0, 1, 202.095, 35.9511, 0)
+
+[node name="Piedra2" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 0.863642, 0.504106, 0, -0.504106, 0.863642, 143.585, 26.0163, 5.10987)
+
+[node name="Piedra3" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 207.837, 39.703, -4.97925)
+
+[node name="Piedra4" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 161.093, 31.4035, -8.48806)
+
+[node name="Piedra5" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 0.914091, -0.405509, 0, 0.405509, 0.914091, 170.997, 35.6301, -9.81128)
+
+[node name="Piedra6" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 184.327, 31.858, 0)
+
+[node name="Piedra7" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(0.937245, -0.34867, 0, 0.34867, 0.937245, 0, 0, 0, 1, 164.571, 26.5607, 17.2446)
+
+[node name="Piedra8" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 168.963, 31.6683, 0)
+
+[node name="Piedra9" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.777, 28.1307, -9.22945)
+
+[node name="Piedra10" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.669, 23.6877, -14.211)
+
+[node name="Piedra11" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 21.867, 0)
+
+[node name="Piedra12" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.578, 18.8169, 14.2495)
+
+[node name="Piedra13" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(0.887968, -0.459905, 0, 0.459905, 0.887968, 0, 0, 0, 1, 88.8257, 19.9798, 0)
+
+[node name="Piedra14" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 20.0593, 3.88819)
+
+[node name="Piedra15" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.181, 20.241, 0)
+
+[node name="Piedra16" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.3392, 21.0807, 15.9223)
+
+[node name="Piedra17" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 21.867, 0)
+
+[node name="Piedra18" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 20.4016, -11.1835)
+
+[node name="Piedra19" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9078, 13.97, 0)
+
+[node name="Piedra20" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.5094, 12.3026, 0)
+
+[node name="Piedra21" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(0.98179, 0.189969, 0, -0.189969, 0.98179, 0, 0, 0, 1, -8.28908, 2.16292, 0)
+
+[node name="Piedra22" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.19975)
+
+[node name="Piedra23" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(0.910214, -0.414137, 0, 0.414137, 0.910214, 0, 0, 0, 1, 13.3684, 5.40289, 4.61123)
+
+[node name="Piedra24" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(0.738808, -0.673916, 0, 0.673916, 0.738808, 0, 0, 0, 1, 7.62454, 3.07674, 12.4615)
+
+[node name="Piedra25" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.335, 1.17156, 0)
+
+[node name="Piedra26" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9774, 2.44161, 10.4318)
+
+[node name="Piedra27" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64946, 1.8245, -13.5806)
+
+[node name="Piedra28" parent="Piedras" instance=ExtResource("11_wr8cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.513, 11.1281, -11.3973)
+
+[node name="Piedra29" parent="Piedras" instance=ExtResource("12_pdln8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.5972, 11.3461, 13.0013)
+
+[node name="Piedra30" parent="Piedras" instance=ExtResource("13_moxnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0414, 16.0886, -14.061)
+
+[node name="Arcos" type="Node3D" parent="."]
+
+[node name="Arch" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(-0.0582261, 0, 0.998304, 0.113686, 0.993495, 0.00663076, -0.991809, 0.11388, -0.0578473, 111.048, 19.7777, -15.7427)
+
+[node name="Arch2" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.957, 22.839, 9.87876)
+
+[node name="Arch3" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.47, 31.5335, 0)
+
+[node name="Arch4" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(-0.589009, -0.0968012, -0.802308, 0.213529, 0.938874, -0.270039, 0.779406, -0.330372, -0.532335, 81.5975, 9.46051, -14.814)
+
+[node name="Arch5" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(-0.696339, 0.43881, -0.567941, 0.340049, 0.89858, 0.277347, 0.632043, 1.6679e-08, -0.774934, 98.3421, 19.9167, 9.77538)
+
+[node name="Arch6" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.503, 28.5187, 0)
+
+[node name="Arch7" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 191.503, 28.5187, 0)
+
+[node name="Arch8" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(0.0441849, -0.28853, -0.956451, 0.013315, 0.957471, -0.288223, 0.998935, 8.33953e-10, 0.0461476, 191.503, 32.3147, 17.4615)
+
+[node name="Arch9" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(0.0772737, 0.049187, -0.995796, -0.544272, 0.838908, -0.000797946, 0.835342, 0.542046, 0.0915966, 30.2706, 3.77679, 13.1733)
+
+[node name="Arch10" parent="Arcos" instance=ExtResource("14_j3uld")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3775, 1.13958, 0)
 
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]
