@@ -9,14 +9,6 @@ public partial class MainMenu : Control
 
 	public override void _Ready()
 	{
-		// Referencias a los nodos
-		_startButton = GetNode<Button>("MarginContainer/HBoxContainer/VBoxContainer/Start_Button");
-		_optionsButton = GetNode<Button>("MarginContainer/HBoxContainer/VBoxContainer/Options_button");
-		_exitButton = GetNode<Button>("MarginContainer/HBoxContainer/VBoxContainer/Exit_button");
-		
-		// Conectar señales de los botones
-		_optionsButton.Pressed += OnOptionsButtonPressed;
-		_exitButton.Pressed += OnExitButtonPressed;
 	}
 
 	private void OnStartButtonPressed()

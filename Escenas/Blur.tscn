@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckaa4exisdlva"]
+[gd_scene load_steps=3 format=3 uid="uid://clh6oedb2ku3d"]
 
 [ext_resource type="Material" uid="uid://b41uah2n3u3j6" path="res://Materials/Blur.tres" id="1_j83kh"]
 [ext_resource type="Texture2D" uid="uid://2wdtstmpwiig" path="res://icon.svg" id="2_yx435"]

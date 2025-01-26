@@ -1,8 +1,8 @@
 [gd_scene load_steps=204 format=3 uid="uid://fduqje5puket"]
 
 [ext_resource type="Script" path="res://_Scripts/Player/Movement.cs" id="1_xqbbu"]
-[ext_resource type="PackedScene" uid="uid://bgsisffcpteh" path="res://Escenas/Filter.tscn" id="2_xjfwh"]
-[ext_resource type="PackedScene" uid="uid://ckaa4exisdlva" path="res://Escenas/Blur.tscn" id="3_ttqip"]
+[ext_resource type="PackedScene" path="res://Escenas/Filter.tscn" id="2_xjfwh"]
+[ext_resource type="PackedScene" uid="uid://clh6oedb2ku3d" path="res://Escenas/Blur.tscn" id="3_ttqip"]
 [ext_resource type="Texture2D" uid="uid://c6rqh4uq7ogsa" path="res://Animations/Player/Idle/Armature_Idle_00.png" id="4_3ram8"]
 [ext_resource type="Texture2D" uid="uid://mr88fvf3eiff" path="res://Animations/Player/Attack/Armature_animtion0_00.png" id="4_v337n"]
 [ext_resource type="Texture2D" uid="uid://c11jfvtohfopg" path="res://Animations/Player/Idle/Armature_Idle_01.png" id="5_ffta3"]
@@ -1122,6 +1122,8 @@ animations = [{
 script = ExtResource("1_xqbbu")
 
 [node name="Filter" parent="." instance=ExtResource("2_xjfwh")]
+visible = false
+scale = Vector2(1.2, 1.2)
 
 [node name="Blur" parent="." instance=ExtResource("3_ttqip")]
 visible = false
@@ -1135,6 +1137,7 @@ shape = SubResource("CapsuleShape3D_60e7r")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0634511, 0.280637, 3.19783)
+visible = false
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qquox")
