@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5uxwghqceg3m"]
+[gd_scene load_steps=22 format=3 uid="uid://5uxwghqceg3m"]
 
 [ext_resource type="Script" path="res://_Scripts/General/GameManager.cs" id="1_p6p35"]
 [ext_resource type="ArrayMesh" uid="uid://15qeb2q4o76y" path="res://Props/Entorno/Base.obj" id="3_bqbg7"]
@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://cqq3r2fnhyfi8" path="res://Escenas/Interfaz/InterfazIngame.tscn" id="4_gpu1u"]
 [ext_resource type="PackedScene" uid="uid://fduqje5puket" path="res://Escenas/Prefabs/Player.tscn" id="4_ktj5m"]
 [ext_resource type="PackedScene" uid="uid://dlfcegky6fyke" path="res://Escenas/Enemigos/Orca.tscn" id="6_nh1x4"]
-[ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
+[ext_resource type="PackedScene" uid="uid://dawl78m0kuh4c" path="res://Escenas/Prefabs/Crate.tscn" id="8_k3c6y"]
 [ext_resource type="PackedScene" uid="uid://va1uhuexatdy" path="res://Escenas/Prefabs/crate.tscn" id="9_tsml1"]
-[ext_resource type="PackedScene" uid="uid://c16jni2tyv1ld" path="res://Escenas/Prefabs/Barril.tscn" id="10_h7xwt"]
-[ext_resource type="PackedScene" uid="uid://6u848xxagq64" path="res://Escenas/Prefabs/Piedra.tscn" id="11_wr8cs"]
-[ext_resource type="PackedScene" uid="uid://bfh2jf2pw7was" path="res://Escenas/Prefabs/Piedra2.tscn" id="12_pdln8"]
-[ext_resource type="PackedScene" uid="uid://cp1yex61gasfn" path="res://Escenas/Prefabs/Piedra3.tscn" id="13_moxnt"]
-[ext_resource type="PackedScene" uid="uid://dog5g0l1ikfc0" path="res://Escenas/Prefabs/Arch.tscn" id="14_j3uld"]
+[ext_resource type="PackedScene" path="res://Escenas/Prefabs/Barril.tscn" id="10_h7xwt"]
+[ext_resource type="PackedScene" path="res://Escenas/Prefabs/Piedra.tscn" id="11_wr8cs"]
+[ext_resource type="PackedScene" path="res://Escenas/Prefabs/Piedra2.tscn" id="12_pdln8"]
+[ext_resource type="PackedScene" path="res://Escenas/Prefabs/Piedra3.tscn" id="13_moxnt"]
+[ext_resource type="PackedScene" uid="uid://dkroc3gcs1dld" path="res://Escenas/Prefabs/Arch.tscn" id="14_j3uld"]
+[ext_resource type="PackedScene" uid="uid://b6omq8mhsr7eq" path="res://Escenas/Prefabs/Caracol1.tscn" id="15_871uk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cm8j"]
 albedo_texture = ExtResource("3_r57dh")
@@ -39,6 +40,12 @@ nivel = 1
 
 [node name="Orca" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_nh1x4")]
 transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 7.3577, 16.142, -0.438412)
+speed = 5.0
+"daño" = 10
+player = NodePath("../Player")
+
+[node name="Orca2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_nh1x4")]
+transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 183.495, 43.8997, -0.438412)
 speed = 5.0
 "daño" = 10
 player = NodePath("../Player")
@@ -349,7 +356,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.777, 28.1307, -9.22945)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.669, 23.6877, -14.211)
 
 [node name="Piedra11" parent="Piedras" instance=ExtResource("12_pdln8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 21.867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.469, 20.6743, 3.53438)
 
 [node name="Piedra12" parent="Piedras" instance=ExtResource("13_moxnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.578, 18.8169, 14.2495)
@@ -367,7 +374,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.181, 20.241, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.3392, 21.0807, 15.9223)
 
 [node name="Piedra17" parent="Piedras" instance=ExtResource("12_pdln8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 21.867, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 19.929, 0)
 
 [node name="Piedra18" parent="Piedras" instance=ExtResource("13_moxnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5477, 20.4016, -11.1835)
@@ -417,7 +424,7 @@ transform = Transform3D(-0.0582261, 0, 0.998304, 0.113686, 0.993495, 0.00663076,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.957, 22.839, 9.87876)
 
 [node name="Arch3" parent="Arcos" instance=ExtResource("14_j3uld")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.47, 31.5335, 0)
+transform = Transform3D(-0.385035, -0.55158, 0.739937, -0.61836, 0.74936, 0.236834, -0.685112, -0.366358, -0.629605, 119.434, 20.5064, 0)
 
 [node name="Arch4" parent="Arcos" instance=ExtResource("14_j3uld")]
 transform = Transform3D(-0.589009, -0.0968012, -0.802308, 0.213529, 0.938874, -0.270039, 0.779406, -0.330372, -0.532335, 81.5975, 9.46051, -14.814)
@@ -439,6 +446,53 @@ transform = Transform3D(0.0772737, 0.049187, -0.995796, -0.544272, 0.838908, -0.
 
 [node name="Arch10" parent="Arcos" instance=ExtResource("14_j3uld")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3775, 1.13958, 0)
+
+[node name="Caracoles" type="Node3D" parent="."]
+
+[node name="Caracol1" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.204479, -0.978871, 0, 0.978871, 0.204479, 0, 0, 0, 1, 128.577, 23.7151, 16.7046)
+
+[node name="Caracol2" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.204479, -0.978871, 0, -0.978572, -0.204416, -0.0247288, 0.0242063, 0.00505652, -0.999694, 136.521, 26.617, -1.3295)
+
+[node name="Caracol3" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.807048, -0.590056, -0.0225262, -0.589989, 0.807347, -0.0102022, 0.0242063, 0.00505652, -0.999694, 152.374, 26.617, -1.3295)
+
+[node name="Caracol4" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.807048, -0.590056, -0.0225262, 0.0323694, -0.00611771, -0.999457, 0.589598, -0.807339, 0.024037, 175.646, 32.6419, -1.3295)
+
+[node name="Caracol5" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.405103, -0.269837, 0.873544, -0.698761, -0.524777, -0.486151, 0.589598, -0.80734, 0.024037, 175.646, 30.3242, 14.1746)
+
+[node name="Caracol6" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.405103, -0.269837, 0.873544, -0.698761, -0.524777, -0.486151, 0.589598, -0.80734, 0.024037, 183.161, 31.5638, 8.54821)
+
+[node name="Caracol7" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.729961, 0.545355, 0.412002, -0.345734, -0.225369, 0.910866, 0.589598, -0.80734, 0.024037, 122.513, 24.013, 8.54821)
+
+[node name="Caracol8" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.338186, 0.219732, -0.915067, 0.733488, 0.54765, 0.402585, 0.589598, -0.80734, 0.024037, 110.99, 20.8534, -8.9882)
+
+[node name="Caracol9" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.0486588, 0.00579812, -0.998799, 0.80623, 0.590059, 0.0427027, 0.589597, -0.807339, 0.024037, 96.6253, 20.8534, -1.84328)
+
+[node name="Caracol10" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(0.557223, -0.781646, 0.280237, 0.80623, 0.590059, 0.0427027, -0.198735, 0.20214, 0.958981, 86.3624, 18.0464, -7.95923)
+
+[node name="Caracol11" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.636769, 0.717189, -0.283135, -0.745004, -0.666918, -0.0138137, -0.198735, 0.20214, 0.958981, 81.0269, 18.0464, 10.0954)
+
+[node name="Caracol12" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.636769, 0.717189, -0.283135, 0.767288, 0.625645, -0.140846, 0.0761287, -0.306932, -0.948682, 63.016, 12.6193, 10.0954)
+
+[node name="Caracol13" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.996443, 0.0110614, -0.0835402, 0.0361351, 0.951667, -0.304998, 0.0761287, -0.306932, -0.948682, 50.6534, 12.6193, -0.712725)
+
+[node name="Caracol14" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.638401, 0.715855, -0.282834, 0.76593, 0.627171, -0.141449, 0.0761287, -0.306932, -0.948682, 26.1667, 7.70505, -0.712725)
+
+[node name="Caracol15" parent="Caracoles" instance=ExtResource("15_871uk")]
+transform = Transform3D(-0.638401, 0.715855, -0.282834, 0.76593, 0.627171, -0.141449, 0.0761287, -0.306932, -0.948682, 15.8049, 7.01378, -2.6922)
 
 [connection signal="GameOverSignal" from="." to="InterfazIngame" method="ActivarFiltroGameOver"]
 [connection signal="timeout" from="OxigenTimer" to="." method="OnOxigenTimerTimeout"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6omq8mhsr7eq"]
+
+[ext_resource type="Texture2D" uid="uid://bpapaku6cpqpn" path="res://Props/Entorno/Caracoles/Nautilus1_Texture.png" id="1_xmk0w"]
+[ext_resource type="ArrayMesh" uid="uid://cf5fmcw2xd5kb" path="res://Props/Entorno/Caracoles/Nautilus1.obj" id="2_4mlg8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jt3d"]
+albedo_texture = ExtResource("1_xmk0w")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3hb4y"]
+points = PackedVector3Array(-0.121284, 1.83503, -0.491039, -0.261368, 0.0109112, -0.0711334, -0.191267, 0.0130934, -0.071375, -0.226325, 1.10119, 0.961481, -0.742848, 0.406242, -0.876907, 0.256006, 0.132534, -0.830517, -0.570146, 1.71567, 0.0990058, -0.401944, 1.06442, -1.22961, 0.0861477, 1.58417, 0.44894, -0.50302, 0.475065, 0.723386, 0.105653, 0.479765, 0.672404, 0.152097, 1.26886, -0.932664, -0.262179, 0.0609568, -1.21809, -0.742848, 0.0370657, -0.581514, -0.602369, 1.50619, -0.723143, -0.595212, 0.959324, 0.746136, 0.290197, 0.0370657, -0.581745, -0.261455, 0.114284, 0.563134, 0.0547312, 0.818889, -1.23001, -0.366165, 1.72849, 0.488158, 0.149103, 1.64188, -0.278315, -0.226325, 1.44999, -1.05213, -0.226325, 1.91555, 0.000728534, -0.261787, 0.568325, 0.92552, 0.114505, 1.3343, 0.573486, -0.543076, 0.185059, -1.16167, -0.400036, 1.82792, -0.454087, -0.60837, 0.924806, -1.11377, 0.0945248, 0.0681686, -1.10317, -0.368621, 0.568083, -1.31482, -0.0516735, 0.0862117, 0.382884, -0.0150863, 1.13509, 0.880282)
+
+[node name="Caracol1" type="Node3D"]
+
+[node name="Nautilus1" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_3jt3d")
+mesh = ExtResource("2_4mlg8")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Nautilus1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Nautilus1/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_3hb4y")

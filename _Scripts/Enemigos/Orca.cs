@@ -9,11 +9,12 @@ public partial class Orca : Node3D
 	public int daño;
 	[Export]
 	public CharacterBody3D player;
-	private int vida = 20;
+    private int vida = 20;
 	private Vector3 target;
 	private Timer cooldownAtaque;
 	private bool enCooldownAtaque = false;
 	private bool causoDaño = false;
+    private bool habilitadoAtacar = true;
 
 
 	// Called when the node enters the scene tree for the first time.
@@ -36,7 +37,7 @@ public partial class Orca : Node3D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
-		if (!enCooldownAtaque) {
+		if (!enCooldownAtaque && habilitadoAtacar) {
 			if (Position.DistanceTo(player.Position) < 15) {
 				target = player.Position;
 				if (Position.DistanceTo(player.Position) <= 4) {
@@ -69,14 +70,21 @@ public partial class Orca : Node3D
 			GameManager.Instancia.QuitarOxigeno(daño);
 			causoDaño = true;
 			enCooldownAtaque = true;
+            habilitadoAtacar = false;
 			cooldownAtaque.Start();
 		}
 	}
 
-	public void RecibirDaño(int cantidad) {
-		vida -= daño;
-		if (vida <= 0) {
-			QueueFree();
+    private void OnBodyExited(Node body) {
+		if (body.Name == "Player") {
+			habilitadoAtacar = true;
 		}
 	}
+
+    public void RecibirDaño(int cantidad) {
+        vida -= daño;
+        if (vida <= 0) {
+            QueueFree();
+        }
+    }
 }

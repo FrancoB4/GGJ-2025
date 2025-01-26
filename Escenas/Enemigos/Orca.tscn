@@ -436,3 +436,4 @@ frame_progress = 0.88623
 
 [connection signal="timeout" from="CooldownAtaque" to="." method="OnCooldownAtaqueTimeout"]
 [connection signal="body_entered" from="Area3D" to="." method="OnBodyEntered"]
+[connection signal="body_exited" from="Area3D" to="." method="OnBodyExited"]

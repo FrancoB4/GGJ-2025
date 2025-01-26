@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cf5fmcw2xd5kb"
+path="res://.godot/imported/Nautilus1.obj-83e1dc69608cb5ee4b7e70acaaadb61e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Nautilus1.obj-83e1dc69608cb5ee4b7e70acaaadb61e.mesh"]
+
+source_file="res://Props/Entorno/Caracoles/Nautilus1.obj"
+dest_files=["res://.godot/imported/Nautilus1.obj-83e1dc69608cb5ee4b7e70acaaadb61e.mesh", "res://.godot/imported/Nautilus1.obj-83e1dc69608cb5ee4b7e70acaaadb61e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
