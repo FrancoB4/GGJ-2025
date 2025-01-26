@@ -57,7 +57,10 @@ shape = SubResource("ConcavePolygonShape3D_sxsa8")
 
 [node name="Player" parent="." instance=ExtResource("4_ktj5m")]
 transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 14.3815, 11.3696, 1.95936)
+<<<<<<< HEAD
+=======
 Speed = 7.0
+>>>>>>> 3f31e7c9b861ce78444c04bd2361fce6b3d31033
 
 [node name="Camera3D2" type="Camera3D" parent="Player"]
 transform = Transform3D(2.04082, 0, 0, 0, 1.95156, 0.59695, 0, -0.59695, 1.95156, -1.36717, 2.79491, 6.99955)

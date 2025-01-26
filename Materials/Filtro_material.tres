@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dw8busfiv6xn6"]
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://dwmbr630n2pwc"]
 
 [ext_resource type="Shader" path="res://Materials/Filter.gdshader" id="1_beo6l"]
 

@@ -4,15 +4,15 @@ using System.Linq;
 
 public partial class GameManager : Node
 {
-    [Signal]
-    public delegate void GameOverSignalEventHandler();
+	[Signal]
+	public delegate void GameOverSignalEventHandler();
 	public static GameManager Instancia { get; private set; }
-    [Export]
-    public int nivel = 0;
-    private InterfazIngame interfazIngame;
+	[Export]
+	public int nivel = 0;
+	private InterfazIngame interfazIngame;
 	private int oxigeno;
 	private bool pocoOxigeno = false;
-    private ColorRect filtroPocoOxigeno;
+	private ColorRect filtroPocoOxigeno;
 
 	private GameManager() { }
 
@@ -21,22 +21,22 @@ public partial class GameManager : Node
 	{
 		Instancia = this;
 		oxigeno = 18;
-        GD.Print(nivel);
-        if (nivel != 0) {
-            Timer timer = GetNode<Timer>("OxigenTimer");
-            timer.Start();
-            interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
-        }
-        RequestReady();
+		GD.Print(nivel);
+		if (nivel != 0) {
+			Timer timer = GetNode<Timer>("OxigenTimer");
+			timer.Start();
+			interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
+		}
+		RequestReady();
 	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
 	{
 	}
 
 	public void GameOver() {
-        EmitSignal(SignalName.GameOverSignal);
+		EmitSignal(SignalName.GameOverSignal);
 	}
 
 	public void OnOxigenTimerTimeout() {
@@ -44,16 +44,16 @@ public partial class GameManager : Node
 	}
 
 	public void AgregarOxigeno(int cant) {
-        if (oxigeno + cant <= 100) {
-            oxigeno += cant;
-        }
-        else {
-            oxigeno = 100;
-        }
-		if (oxigeno >= 15) {
-            pocoOxigeno = false;
+		if (oxigeno + cant <= 100) {
+			oxigeno += cant;
 		}
-        interfazIngame.ActualizarValor(oxigeno);
+		else {
+			oxigeno = 100;
+		}
+		if (oxigeno >= 15) {
+			pocoOxigeno = false;
+		}
+		interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
 
@@ -63,19 +63,19 @@ public partial class GameManager : Node
 			pocoOxigeno = true;
 		}
 		else if (oxigeno <= 0) {
-            GetNode<Timer>("OxigenTimer").QueueFree();
+			GetNode<Timer>("OxigenTimer").QueueFree();
 			GameOver();
 		}
-        interfazIngame.ActualizarValor(oxigeno);
+		interfazIngame.ActualizarValor(oxigeno);
 		GD.Print(oxigeno);
 	}
 
-    public void Reiniciar() {
-        oxigeno = 60;
-        pocoOxigeno = false;
-    }
-    public void CargarNivel(int nivel) {
-        Instancia.nivel = nivel;
-        GetTree().ChangeSceneToFile("res://Escenas/Niveles/PantallaDeCarga.tscn");
-    }
+	public void Reiniciar() {
+		oxigeno = 60;
+		pocoOxigeno = false;
+	}
+	public void CargarNivel(int nivel) {
+		Instancia.nivel = nivel;
+		GetTree().ChangeSceneToFile("res://Escenas/Niveles/PantallaDeCarga.tscn");
+	}
 }
