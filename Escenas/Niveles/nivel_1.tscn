@@ -29,8 +29,9 @@ dof_blur_far_enabled = true
 dof_blur_near_enabled = true
 dof_blur_near_distance = 2.65
 
-[node name="Node3D" type="Node3D"]
+[node name="Nivel" type="Node3D"]
 script = ExtResource("1_p6p35")
+nivel = 1
 
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(-3.20947e-08, -0.678891, 0.73424, -2.96753e-08, 0.73424, 0.678891, -1, 1.06581e-14, -4.37114e-08, 23.6847, 3.12023, -1.78274)

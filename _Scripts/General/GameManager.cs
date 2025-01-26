@@ -1,12 +1,14 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class GameManager : Node
 {
     [Signal]
     public delegate void GameOverSignalEventHandler();
 	public static GameManager Instancia { get; private set; }
-    public int nivel = 1;
+    [Export]
+    public int nivel = 0;
     private InterfazIngame interfazIngame;
 	private int oxigeno;
 	private bool pocoOxigeno = false;
@@ -18,15 +20,18 @@ public partial class GameManager : Node
 	public override void _Ready()
 	{
 		Instancia = this;
-		oxigeno = 18;        
-		Timer timer = GetNode<Timer>("OxigenTimer");
-		timer.Start();
-
-        interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
+		oxigeno = 18;
+        GD.Print(nivel);
+        if (nivel != 0) {
+            Timer timer = GetNode<Timer>("OxigenTimer");
+            timer.Start();
+            interfazIngame = GetNode<InterfazIngame>("InterfazIngame");
+        }
+        RequestReady();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+    // Called every frame. 'delta' is the elapsed time since the previous frame.
+    public override void _Process(double delta)
 	{
 	}
 
@@ -68,5 +73,9 @@ public partial class GameManager : Node
     public void Reiniciar() {
         oxigeno = 60;
         pocoOxigeno = false;
+    }
+    public void CargarNivel(int nivel) {
+        Instancia.nivel = nivel;
+        GetTree().ChangeSceneToFile("res://Escenas/Niveles/PantallaDeCarga.tscn");
     }
 }
